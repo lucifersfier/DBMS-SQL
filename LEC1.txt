@@ -1,1 +1,34 @@
-git a
+1) - What is Data ?
+Ans - Data is a collection of raw and unorganized facts and details.
+      It doesn't carry any specific purpose and has no significance by itself.
+
+2) - Types Of Data 
+     (a) - Quantitative 
+     (b) - Qualitative
+
+3) - What is Information ?
+Ans - Processed, Organized and Structured data.
+      It provides context of the data and enables decision making.
+
+4) - Difference between Data V/s Information
+Ans - (a) - Data is a collection of facts, while information puts those facts into the context.
+      (b) - Data isn't sufficient for decision making, but you can make decisions based on information.           
+
+5) - What is Database ?
+Ans - Database is an electronic place where data is stored in a way that it can be easily accessed, managed and
+      updated.
+
+6) - What is DBMS ?
+Ans - DBMS is a collection of interrelated data and a set of programs to access those data.
+      The primary goal of a DBMS is to provide a way to store and retrieve database information that is both
+      convenient and efficient.
+
+7) - DBMS vs File System (ADVANTEGES OF DBMS)
+Ans - (a) - Data Redundancy and inconsistency
+      (b) - Difficulty in accessing data
+      (c) - Data isolation
+      (d) - Integrity Problems 
+      (e) - Atomicity Problems
+      (f) - Concurrent-access anomalies
+      (g) - Security Problems
+
