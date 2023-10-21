@@ -1,0 +1,85 @@
+  ############################      DBMS ARCHITECTURE       #################################
+
+  1) - View of Data (Three Schema Architecture) ----->>>>>
+
+  The major purpose of DBMS is to provide users with an abstract view of the data.
+  The System hides certain details of how the data is stored and maintained.
+
+  The main objective of three level Architecture is to enable multiple users to access the same data, with a 
+  personalized view while storing the underlying data only once.
+
+        (a) - PHYSICAL LEVEL - 
+              i) - It describes how the data is stored.
+              ii) - It talks about storage allocation, data compression and encryption etc.
+              iii) - GOAL: we must define algorithms that allow efficient access to data.
+        (b) - LOGICAL LEVEL - 
+              i) - It describes the design of the database at the conceptual level, describes what data are 
+                   stored in the database, and what relationships exist among those data.
+              ii) - Users at LOGICAL LEVEL doesn't need to be aware about the PHYSICAL LEVEL Structures.
+              iii) - GOAL: ease to use.
+        (c) - VIEW LEVEL - 
+              i) - It provides different view to different end users.
+              ii) - Each view schema describes the database part that a particular user group is interested 
+                    and hides the remaining database from the user group.
+              iii) - At the external level, a database contains several schemas that sometimes called as
+                     subschema. The subschema is used to describe the ifferent view of the database.
+              iv) - It provides security mechanism to prevent users from accessing certain parts of database.
+
+  2) - INSTANCES AND SCHEMAS ----->>>>>
+
+        a) - The collection of  information stored in the DB at a particular moment is called an instance of database.
+        b) - Schema is Structural description of data, Schema doesn't change frequently. Data may change frequently.
+        c) - We have three types of schemas, PHYSICAL, LOGICAL AND several VIEW schemas called SUBSCHEMAS.
+
+  3) - DATA MODELS ----->>>>>>
+        
+        a) - It provides a way to describe the design of a database at logical level.
+        b) - It is a collection of conceptual tools for describing data, data relationships, data semantics and 
+             and consistency constraints.
+        c) - EXAMPLE: ER model, Relational models, and object oriented model etc. 
+
+  4) - DATABASE LANGUAGES ------>>>>>
+
+        a) - DDL to define the database.
+        Example: CREATE TABLE, ALTER TABLE, DROP and TRUNCATE etc.
+        b) -  DML to manipulate the database.
+        Example: SELECT, UPDATE, INSERT and DELETE etc.
+        c) - TCL to control the transaction control system.
+        EXAMPLE: GRANT and REVOKE
+        d) - DCL to control the database system.
+        EXAMPLE: ROllBACK and CHECKPOINT etc.
+
+  5) - How is database accessed from application programs ?
+
+        a) - Applications interacts with database.
+        b) - API is provided to send DDL/DML statements to DB and retrieve the results.
+             (i) - OPEN DATABASE CONNECTIVITY (ODBC), Microsoft "C".
+             (ii) - JAVA DATABASE CONNECTIVITY (JDBC), Java.
+
+  6) - DATABASE ADMINISTRATOR ---->>>>>
+        a) - A person who has central control of both the data and the programs that access those data.
+        b) - Functions of DBA:
+             (i) - Schema definition.
+             (ii) - Storage Structure and access methods.
+             (iii) - Authorization Control.
+             (iv) - Routine maintenance.
+
+ 7) - DBMS APPLICATIONS ARCHITECTURE ---->>>>>>>
+
+        a) - T1 ARCHITECTURE - 
+             (i) - The client, server and DB all present on the same machine.
+        b) - T2 ARCHITECTURE - 
+             (i) - client machine, which invokes DB system functionality at server end through query language statements.
+             (ii) - API standards like ODBC & JDBC are used to interact between client and server.
+        c) - T3 ARCHITECTURE - 
+             (i) - Client machine is just a frontend and doesn't contain any direct DB calls.
+             (ii) - Client machine communciates with App server, and App server communciated with DB system to 
+                    access data.
+             (iii) - ADVANTAGES:
+                     (*) - Scalability due to distributed application servers.
+                     (**) - Data integrity App server acts as a middle layer between client and DB, which minimize the
+                            chances of data corruption.
+                     (***) - Security client can't directly access DB, hence it is more secure.
+
+
+
