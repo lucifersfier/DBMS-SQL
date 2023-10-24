@@ -24,3 +24,29 @@
                   (c) - Single valued
                   (d) - Multi-valued
                   (e) - Derived 
+                  (f) - Null
+
+7) - Realtionships - 
+
+                   (a) - association among two or more entities.
+                   (b) - Strong relationship between two independent entities.
+                   (c) - Weak relationship, between weak entity and its stron entity.
+
+8) - Degree of Realtionship - 
+
+                   (a) - Number of entities participating in a relationship.
+                   (b) - Unary, Binary & Ternary are three types of relationships.
+
+9) - Realtionship Constraints - 
+
+                   (a) - One to one : Citizen has Adhar Card.
+                   (b) - One to many : Citizen has vehicle. 
+                   (c) - Many to one : Course taken by professor.
+                   (d) - Many to Many : Customer buys product.
+
+10) - Paricipation Constraints - 
+
+                   (a) - Minimum cardinality constraints
+                   (b) - Weak entity has total participation constraint, but Strong may not have total.
+
+                   
