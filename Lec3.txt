@@ -1,0 +1,26 @@
+#######################    ER Model   ########################
+
+1) - Data Model - collection of conceptual tools for describing data, data relationships, data semantics and consistency
+                  constraints.
+
+2) - ER MODEL - It is a high level data model based on a perception of a real world that consists of a collection 
+                of basic objects, called entities and relationships among these objects.
+
+3) - ENTITY -  An entity is a "thing" or "object" in the real world.
+               (a) - It has Physical existence.
+               (b) - Entity can be uniquely identified.
+               (c) - There are two types of entity - (i) - Strong (ii) - Weak
+
+4) - ENTITY SET - It is a set of entities of the same type that that share the same properties, or attributes.
+                  example: Student and Customer of the bank
+
+5) - ATTRIBUTES - An entity is represented by a set of attributes.
+                  Each entity has a value for each of its attributes.
+                  For each attribute, there is a set of permitted values, called the domain.
+
+6) - TYPES OF ATTRIBUTES - 
+                  (a) - Simple
+                  (b) - Composite
+                  (c) - Single valued
+                  (d) - Multi-valued
+                  (e) - Derived 
