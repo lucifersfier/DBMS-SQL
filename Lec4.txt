@@ -1,2 +1,38 @@
 #################### EXTENDED ER FEATURES #############################
 
+1) - SPECIALISATION ----->>>>>
+
+    (a) - It is splitting up the entity set into further sub entity sets on the basis of their functionalities, 
+          specialities and features.
+    (b) - It is a Top-Down approach.
+    (c) - Example - Person(Superclass) entity set can be divided into (subclasses) -> customer, student and employee
+    (d) - Why specialisation ?
+          (i) - Certain attributes may only be applicable to a few entities of the parent entity set.
+          (ii) - Database designer can show the distinctive features of the sub entities.
+          (iii) - To group such entities we apply Specialisation, to overall refine the DB blueprint.
+
+2) - GENERALISATION ----->>>>>
+
+    (a) - It is just a reverse of Specialisation.
+    (b) - " is-a" relationship is present between subclass and Superclass.
+    (c) - It is a Bottom-up approach.
+    (d) - Why GENERALISATION ?
+          (i) - Makes DB more refine and Simpler.
+          (ii) - Common attributes are not repeated.
+
+3) - ATTRIBUTE INHERITANCE ----->>>>>
+
+    (a) - Both specialisation and generalisation, has attribute inheritance.
+    (b) - Example - customer and employee inherit the attributes.
+
+4) - PARTICIPATION INHERITANCE ----->>>>>
+
+    (a) - If a parent entitity set participates in a relationship then it's child entitity sets will also participate 
+          in that relationship.
+
+5) - AGGREGATION ----->>>>>
+
+    (a) - It's the technique to show relationships among relationships.
+    (b) - ABSTRACTION is applied to treat relationships as higher level entities. We can call it Abstract entity
+    (c) - Avoid Redundancy by aggregating relationship as an entity set itself.
+    
