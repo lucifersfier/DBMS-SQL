@@ -1,0 +1,45 @@
+            ------------->>>>>>>>>  Designing the ER Model <<<<<<<<-------------
+
+------>>>>>>  Meta - DB formulate using ER - Model  <<<<<<<--------
+
+1) - Features & Use Case ---->>>>
+
+        (i) - Profile -->> User_profiles -->> friends
+        (ii) - User Can Post
+        (iii) - Post -->> Contains -->> text_content, images, videos
+        (iv) - Post ---->>> Like, Comment
+
+
+    (a) - Identify Entity Sets
+
+            (i) - User_profile
+            (ii) - User_post
+            (iii) - post_comment
+            (iv) - post_like
+    
+    (b) - Attributes + types
+
+            (i) - User_profile
+
+                    name, username, email, password, contact_no, DOB, age
+
+            (ii) - User_post
+
+                    Post_id, text_content, image, video, created_timestamp, modified_timestamp
+
+            (iii) - post_comment
+
+                    post_comment_id, text_content, timestamp
+
+            (iv) - post_like
+
+                    post_like_id, timestamp
+
+    (c) - Relationships and constraints
+
+            (i) - User_profile(n) friendship User_profile(n)
+            (ii) - User_profile(1) Posts User_post(n)
+            (iii) - User_profile(1) can post_like(n)
+            (iv) - User_profile(1) Comments post_comment(n)
+            (v) - User_post(1) has post_comment(n)
+            (vi) - User_post(1) has post_like(n)
