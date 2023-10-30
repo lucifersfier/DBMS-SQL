@@ -1,0 +1,57 @@
+  ########### STEPS TO MAKE ER DIAGRAM  ###################################
+
+1) - Identify entity sets.
+2) - Identify attributes and their types.
+3) - Identify relationships and constraints(Mapping & Participation)
+
+
+********************* ER DIAGRAM of Banking System ****************************
+
+1) - Entity sets
+
+        (a) - Branch (b) - Customer (c) - Employee (d) - Saving A/c (e) - Current A/c (f) - Loan (g) - Payment(Loan)
+
+2) - Attributes
+
+        (a) - Branch ---->>>>
+
+                name, city, assets, liabilities
+
+        (b) - Customer ---->>>>
+
+                Customer-id, name, address, contact no., DOB, age
+
+        (c) - Employee ---->>>>
+
+                Emp-id, name, service, contact no., dependent name, years of service, start date
+
+        (d) - Saving A/c ---->>>>
+
+                Interest rate, daily withdrawal limit
+
+        (e) - Current A/c ---->>>>
+
+                Per transaction charges, overdraft-amount.
+
+        (f) - Generalized Entity ---->>>> (Account)
+
+                Account number, Balance
+
+        (g) - Loan 
+
+                Loan_number, amount
+
+        (i) - Weak Entity Payment ---->>>>
+
+                Payment_number, date, amount
+
+3) - Relationships & constraints ---->>>>
+
+        (i) - Customer(m) borrow loan(n)
+        (ii) - Loan(n) originated_by Branch(1)
+        (iii) - Loan(1) Loan_payment Payment(n)
+        (iv) - Customer(m) deposit Account(n)
+        (v) - Customer(n) banker Employee(1)
+        (vi) - Employee(n) managed_by Employee(1)
+
+     <<<<<<<<<------------ NOW WE CAN DRAW OUR ER DIAGRAM OF BANKING MANAGEMENT SYSTEM ------------->>>>>>>>>>>
