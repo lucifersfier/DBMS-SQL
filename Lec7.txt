@@ -1,0 +1,78 @@
+*******************************     RELATIONAL MODEL        *******************************
+
+1) - 2 steps to design Database
+
+        (a) - ER Model -->> ER Diagram
+        (b) - Relational Model
+
+2) - Relational Model organises the data in the form of relations(tables).
+
+3) - A row in a table represents a relationships among a set of values, and table is collection of such relationships.
+
+4) - Tuple defines the record of the table and the column defines the attributes of the table.
+
+5) - Relation Schema defines the design and structure of the relation, contains the name of the relation and all
+     the attributes.
+
+6) - Number of attributes in a relation is known as Degree of table.
+7) - Total number of tuple in a relation is known as Cardinality.
+
+8) - Relational Key : -->>  Set of attributes which can uniquely identify an each tuple.
+
+9) - Relational Model keys ---->>>>
+
+        (a) - Super Key: Any P&C attributes present in a table which can uniquely identify each tuple.
+        (b) - Candidate Key: Minimal subset of super keys.
+        (c) - Primary Key: Selected from the candidate key and has the least number of Attributes
+        (d) - Alternate Key: All except Primary key
+        (e) - Foreign Key: 
+
+                (i) - it creates relation between two tables.
+                (ii) - It helps to cross reference between two different relations.
+        
+        (f) - Composite Key: Primary key formed using atleast two attributes.
+        (g) - Compound Key: Primary Key which is formed using two foriegn key.
+        (h) - Surrogate Key: 
+
+                (i) - Synthetic Primary Key
+                (ii) - Generated automatically by DB, usually an integer value.
+                (iii) - maybe used as Primary key.
+
+10) - Integrity Constraints 
+
+        (i) - CRUD operations must be done with some integrity policy so that DB is always consistent.
+        (ii) - Introduced so that we do not accidently corrupt the DB.
+        (iii) - Domain Constraints ---->>>>
+                (a) - Restricts the Value in the attribute of a relation, specifies the relation.
+                (b) - Restricts the data types of every attributes.
+        (iv) - Entity Constraints ---->>>>
+                (a) - Every relation should have Primary key
+                (b) - Primary Key Can't be Null
+        (v) - Referential Constraints ---->>>>>
+                (a) - Insert Constraint - value can't be inserted in child table if the value isn't lying in the 
+                                          parent table.
+                (b) - Delete Constraint - Value can't be deleted from the parent table if the value is lying in the
+                                          child table
+
+11) ON DELETE CASCADE -->>
+
+                        Ques -  can we delete value from parent table if the value is lying in the child table without 
+                          violating the delete constraints ?
+
+                        Ans - Yes 
+                              Delete value from parent table -->> delete corresponding entry from child table too.
+                              create table order(order_id,int PK,____,____,cust_id,int referencing customer on delete cascade)
+
+                        Ques - can foriegn key have Null Values ? (On Delete NULL)
+
+                        Ans - Yes on delete value from parent table -->> put corresponding foreign key value Null.
+
+12) - Key Constraints -->>
+
+        (a) - NOT NULL
+        (b) - UNIQUE
+        (c) - DEFAULT
+        (d) - CHECK
+        (e) - PRIMARY Key
+        (f) - FOREIGN key
+
