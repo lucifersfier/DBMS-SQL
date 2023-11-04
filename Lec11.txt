@@ -1,0 +1,10 @@
+########################        INDEXING IN DBMS        #############################
+
+1) - Indexing is used to optimise the performance of a database by minimising the number of disk accesses
+     required when a query is processed.
+2) - The index is a type of data structure. it is used to locate and access the data in a database table
+     quickly.
+3) - Indexing is optional, but increases access speed. It is not the primary mean to access the tuple, it 
+     is the secondary mean.
+4) - Index file is always sorted.
+5) -       
