@@ -2,9 +2,55 @@
 
 1) - Indexing is used to optimise the performance of a database by minimising the number of disk accesses
      required when a query is processed.
+
 2) - The index is a type of data structure. it is used to locate and access the data in a database table
      quickly.
+
 3) - Indexing is optional, but increases access speed. It is not the primary mean to access the tuple, it 
      is the secondary mean.
+
 4) - Index file is always sorted.
-5) -       
+
+5) - Indexing Methods -->>
+                         (1) - Primary Index(Clustering Index) - A file may have several indices, on different 
+                                                                 search keys. 
+                                                                 A primary index is an index whose search key also
+                                                                 defines the sequential order of the file.
+                         (a) - Dense and Sparse indices - The Dense Index contains an index record for every search
+                                                          key value in the data file.
+                                                          Sparse Index helps you to resolve the issues of dense
+                                                          indexing in DBMS. A range of index columns stores the same
+                                                          data block address, and when data needs to be retrieved,
+                                                          the block address will be fetched.
+
+                         (b) - Based on Key attribute - Data file is sorted w.r.t primary key attribute.
+                                                        Primary key will be used as search-key in index.
+                                                        Sparse index will be formed i.e, no. of entries in the index file 
+                                                        is equal to  no. of blocks in datafile.
+
+                         (c) - Based on Non-Key attribute - Data file is sorted w.r.t non-key attribute.
+                                                            No. of entries in the index = unique non-key attribute value in the data
+                                                            file.
+                                                            This is dense index as, all the unique valus have an entry in the index file.
+                         (d) - Multi-Level Index - Index with two or more levels.
+                                                   If the single level index become enough large that the binary search 
+                                                   it self we can break down indexing into multiple levels.
+
+                         (2) - Secondary Index(Non-Clustering index) - Data file in unsorted. Hence, Primary indexing
+                                                                       isn't possible.
+                                                                       It can be done on key or non-key attribute.           
+                                                                       It is called secondary indexing because normally one 
+                                                                       indexing is already done.
+                                                                       It's an example of Dense index
+
+6) - Advantages of Indexing -->>
+
+          (a) - faster access and retrieval of data.
+          (b) - IO is less
+
+7) - limitations of Indexing -->>
+
+          (a) - Additional space to store index table.
+          (b) - Indexing decrease performance in INSERT, DELETE and UPDATE query.
+          
+
