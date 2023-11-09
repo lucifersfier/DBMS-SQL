@@ -53,4 +53,5 @@
           (a) - Additional space to store index table.
           (b) - Indexing decrease performance in INSERT, DELETE and UPDATE query.
           
+8) - 
 
