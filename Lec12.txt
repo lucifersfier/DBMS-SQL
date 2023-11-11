@@ -1,0 +1,10 @@
+********************************** NoSql vs SQL DB **********************************
+
+1) - NoSQL databases are non-tabular databases and store data differently than relational tables. 
+     NoSQL databases are likely document, key-value, wide-column and graph.
+     They provide flexible schemas and scale easily with large amounts of data and high user loads.
+
+     (a) - They are schema free 
+     (b) - Data structure used aren't tabular, they are more flexible, has the ability to adjust dynamically.
+     (c) - Most of the NoSQL are open sources and has the capability of horizontal scaling.
+     (d) - It just stores data in some other format other than relational. 
