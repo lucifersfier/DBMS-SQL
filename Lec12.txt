@@ -8,3 +8,11 @@
      (b) - Data structure used aren't tabular, they are more flexible, has the ability to adjust dynamically.
      (c) - Most of the NoSQL are open sources and has the capability of horizontal scaling.
      (d) - It just stores data in some other format other than relational. 
+
+2) - NoSQL databases allow developers to store huge amounts of unstructured data, giving them a lot of flexibility.
+
+3) - some NoSQL databases like MongoDB provide these capabilities.
+
+4) - NoSQL DB Advantages --->>
+
+        (a) - Flexible schema
