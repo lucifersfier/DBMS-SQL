@@ -16,3 +16,4 @@
 4) - NoSQL DB Advantages --->>
 
         (a) - Flexible schema
+        (b) - 
