@@ -15,5 +15,38 @@
 
 4) - NoSQL DB Advantages --->>
 
-        (a) - Flexible schema
-        (b) - 
+        (a) - Flexible schema : RDBMS has pre-defined schema, which become an issue when we 
+                                don't have all the data with us or we need to change the schema.
+
+        (b) - Horizontal scaling : 
+                                   (a) - It is also known as Scale-out, refers to bringing on additional nodes
+                                         to share the load. This is difficult with relational databases
+                                         due to the difficulty in spreading out related data across nodes.
+                                         With non-relational databases, this is made simpler since collections are 
+                                         self-contained and not coupled relationally. This allows them to be distributed 
+                                         across nodes more simply, as queries do not have to "join" them together across nodes.
+                                   (b) - It is achieved through Sharding or Replica-Sets.
+
+        (c) - High Availability :  
+                                   (a) - NoSQL databases are highly available due to its auto replication feature i.e., whenever
+                                         any kind of failure 
+                                         happens data replicates itself to the preceding consistent state.
+                                   (b) - if a server fails, we can access that data from another server as well, as in NoSQL
+                                         database data is store at multiple servers.
+
+        (d) - Easy Insert and Read Operations : 
+
+                                   (a) - Queries in NoSQL databases can be faster than SQL databases. 
+                                   (b) - But difficult delete or update operations.
+
+        (e) - Caching mechanism
+        (f) - NoSQL use case is more for Cloud applications.
+
+5) - When to use NoSql?
+
+        (a) - Fast-paced Agile development
+        (b) - Storage of structured and semi-structured data.
+        (c) - Huge volumes of Data
+        (d) - Requirements for scale-out architecture.
+        (e) - Modern application paradigms like micro-services and real-time streaming.
+        
