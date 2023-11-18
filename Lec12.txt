@@ -49,4 +49,47 @@
         (c) - Huge volumes of Data
         (d) - Requirements for scale-out architecture.
         (e) - Modern application paradigms like micro-services and real-time streaming.
+
+6) - NoSQL Database Misconception -->>
+
+        (a) - Relationship data is best suited for relational databses.
+        (b) - NoSQL DB don't support ACID transactions.
+
+7) - Types of NoSQL Data Models -->>
+
+        (a) - Key-Value Stores :
+
+                               (i) - It uses compact, efficient index structures to be able to quickly and reliably locate a value by its key, making
+                                     them ideal for systems that need to be able to find and retrieve data in constant time.
+                               (ii) - Use case - Shopping Carts & User Profiles 
+        (b) - Column-Oriented : 
+
+                               (i) - The data is stored such that each row of a column will be next to other rows from that same column.
+                               (ii) - While a relational DBs stores data in a rows and reads data row by row, a column store is organised as a set 
+                                      of columns. This means that when you want to run analytics on a small number of columns, you can read those columns 
+                                      directly without consuming memory with the unwanted data. Columns are often of the same type and benefit form more efficient
+                                      compression, making reads even faster.
+                               (iii) - Use case - Analytics 
+        
+        (c) - Document Based Stores :
+
+                               (i) - This DB stores data in documents similar to JSON objects. 
+                               (ii) - Use Case - E-commerce platforms and mobile app development industries.
+
+        (d) - Graph Based Stores :
+
+                               (i) - A Graph database focuses on the relationsip beetween data elements. Each element is stored as a node.
+                               (ii) - A graph database is optimised to capture and search the connections between data elements, overcoming the overhead
+                                      associated with joining multiple tables in SQL.
+                               (iii) - Use case - Fraud detection and Social Networks
+
+8) - NoSQL Databases Dis-advantages :
+
+                                (i) - Data Redundancy
+                                (ii) - Update & Delete operations are costly
+                                (iii) - All type of NoSQL Data model doesn't fulfill all of your application needs.
+                                (iv) - Doesn't support ACID properties in general
+                                (v) - Doesn't support data entry with consistency constraints.
+
+
         
