@@ -1,0 +1,11 @@
+            **********************************      Types Of Database     **********************************
+
+1) - RELATIONAL DATABASES ---->>>>
+
+        (a) - They are based on Relational Model.
+        (b) - They are highly optimised for working with Structured Data.
+        (c) - They use a well known querying language through SQL.
+        (d) - Scalability issues(Horizontal Scaling).
+        (e) - Data become huge System become more complex.
+
+2) - 
