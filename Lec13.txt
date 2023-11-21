@@ -8,4 +8,6 @@
         (d) - Scalability issues(Horizontal Scaling).
         (e) - Data become huge System become more complex.
 
-2) - 
+2) - Object Oriented Database ---->>>>
+
+        (a) - 
