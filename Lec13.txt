@@ -10,4 +10,18 @@
 
 2) - Object Oriented Database ---->>>>
 
-        (a) - 
+        (a) - They are based on the Object Oriented Programming paradigmn.
+        (b) - In object Oriented Databases data is treated as an object.
+        (c) - All bits of information come in one instantly available object package instead of multiple tables.
+        
+
+        ADVANTAGES -->>
+
+                (a) - Data storage and retrieval is easy and quick.
+                (b) - Relatively friendly to Model the advance real world problems.
+        
+        Disadvantages -->>
+
+                (a) - High complexity causes performance issues.
+                (b) - Doesn't support views like Relational Databases.
+                (c) - Example - ObjectDB, GemStone etc.
