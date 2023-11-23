@@ -25,3 +25,23 @@
                 (a) - High complexity causes performance issues.
                 (b) - Doesn't support views like Relational Databases.
                 (c) - Example - ObjectDB, GemStone etc.
+
+3) - HIERARCHICAL DATABASES -->>
+
+        (a) - As the name suggests, the hierarchical database model is most appropriate for use cases in which the main focus of
+              information gathering is based on a concrete hierarchy, such as several individual employees reporting to a single department at 
+              a company.
+        (b) - The Schema for hierarchical databases is defined by its tree-like organisation.
+        (c) - The disk storage system is also inherently a hierarchical structure, these models can also be used as physical modes.
+        (d) - the major diadvantages of hierarchical databses as their inflexible nature.
+              the one to many structures isn't ideal for complex structures as it can't describe relationships in which each child node has
+              multiple parents nodes. Also the tree like organisation of data requires top to bottom sequential searching, which is time consuming,
+              and requires repeatitive storage data in multiple different entities, which can be redundant.
+        (e) - Example - IBM, IMS
+
+4) - Network Databases -->>
+
+        (a) - Extension of hierarchical databases.
+        (b) - Organised in Graph structure 
+        (c) - M:N links may cause slow retrievals 
+        (d) - Example - Integrated data store (IDS), IDMS (Integrated Database Management System) etc.
