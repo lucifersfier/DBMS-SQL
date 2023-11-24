@@ -1,0 +1,31 @@
+*********************************       CLUSTERING IN DBMS      *********************************
+
+1) - Database Clustering is the process of combining more than one servers or instances connecting a single databse.
+2) - Replicate the same datasets on different servers.
+
+3) - ADVANTAGESS -->>
+
+        (a) - Data Redundancy -->
+
+                                The Redundancy that clustering offers is requires and is quite certain due to the synchronisation. In case 
+                                any of the servers had to face a failure due to any possible reason, the data is available at other servers 
+                                to access.
+
+        (b) - Load Balancing -->
+
+                                Scalability doesn't come by default with the database. Basically, what load balancing does is allocating the workload
+                                among the different servers that are part of the cluster. This indicates that more users can be supported and if for some 
+                                reasons if a huge spike in the traffic appears, there is a higher assurance that it will be able to support the new traffic.
+                                One machine is not going to get all of the hits. This can  provide scaling seamlessly as required. This links directly to 
+                                high availability.
+
+        (c) - High Availability -->
+
+                                When you access a database, it implies that is available. High availability refers the amount of time a database 
+                                is considered available. 
+
+4) - How does Clustering Work ?
+
+        In cluster architecture, all requests are split with many computers so that an individual user request is executed and produced by a number of
+        computer system. the clustering is serviceable definitely by the ability of load balancing and high availability. If one node collapses, the request is
+        handled by another node. Consequently, there are few or no possibilities of absolute system failures.
