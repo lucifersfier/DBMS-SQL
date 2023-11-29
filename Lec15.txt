@@ -1,2 +1,7 @@
 *****************************  DATABASE OPTIMISATION  ***************************
 
+A big problem can be solved easily when it is chopped into several smaller sub-problems. That is what the partitioning technique does.
+It divides a big database containing data metrics and indexes into smaller and handy slices of data called partitions.
+Once the databse is partitioned, the data definition language can easily work on the smaller partitioned slices, instead of handling the giant database
+together. This is how partitioning cuts down the problems in managing large database tables.
+
