@@ -1,7 +1,50 @@
 *****************************  DATABASE OPTIMISATION  ***************************
 
-A big problem can be solved easily when it is chopped into several smaller sub-problems. That is what the partitioning technique does.
-It divides a big database containing data metrics and indexes into smaller and handy slices of data called partitions.
-Once the databse is partitioned, the data definition language can easily work on the smaller partitioned slices, instead of handling the giant database
-together. This is how partitioning cuts down the problems in managing large database tables.
+1) - A big problem can be solved easily when it is chopped into several smaller sub-problems. That is what the partitioning technique does.
+     It divides a big database containing data metrics and indexes into smaller and handy slices of data called partitions.
+     Once the databse is partitioned, the data definition language can easily work on the smaller partitioned slices, instead of handling the giant database
+     together. This is how partitioning cuts down the problems in managing large database tables.
+2) - Partitioning is the technique used to divide stored database objects into separate servers. When we horizontally scale our machines/servers, we know 
+     that it gives us a challenging time dealing with relational databases as it's quite tough to maintain the relations.
+
+3) - Vertical Partitioning -->>
+
+     (a) - Slicing relation Vertically/column wise.
+     (b) - Need to access different servers to get complete tuples.
+
+4) - Horizontal Partitioning -->>
+
+     (a) - Slicing relation horizonatlly/row wise.
+     (b) - Independent chunks of data tuples are stored in different servers.
+
+5) -  Advantages of Partitioning -->>
+
+     (a) - Parallelism 
+     (b) - Availability
+     (c) - Performance 
+     (d) - Manageability
+     (e) - Reduce cost, as scaling-up or vertical scaling might be costly.
+
+6) - Distributed Database-->>
+
+     (a) - A single logical database that is, spread across multiple locations and logically interconnected by network.
+     (b) - This is the product of applying DB optimisation techniques like Clustering, Partitioning, and Sharding.
+
+7) - Sharding -->>
+
+     (a) - Technique to implement Horizontal Partitioning.
+     (b) - Sharding is the idea that instead of having all the data sit on one DB instance, we split it up and introduce a routing layer 
+           so that we can forward the request to the right instances that actually contain the data.
+
+     (c) - PROS ->
+
+        (i) - Scalabiltiy
+        (ii) - Availability
+
+     (d) - CONS ->
+         
+        (i) - Complexity, making partitioning mapping, routing layer to be implemented in the system, Non-uniformity that creates the necessity of 
+              Resharding.
+        (ii) - Not well suited for analytical type of queries, as the data is spread across different DB instances.
+
 
