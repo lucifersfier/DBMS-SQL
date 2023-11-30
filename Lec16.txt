@@ -1,0 +1,32 @@
+***********************************************     CAP THEOREM     ***********************************************
+
+1) - CONSISTENCY: In a consistent system, all nodes see the same data simultaneously.When data is written to a single nod, it is then 
+                  replicated across the other nodes in the system.
+
+2) - AVAILABILITY: When Availability is present in a distributed system, it means that the system remains operational all the time. This means that
+                   the system will operate even if there are multiple nodesm down.
+
+3) - PARTITION TOLEARNACE: When a distributed system encounters a partition, it means that there's a break in communication between nodes. If a
+                           system is partition-tolerant, the system doesn't fail, regardless of whether messages are dropped or delayed between nodes 
+                           within the system. To have partition tolerance, the sytem must replicate records across combination of nodes and networks.
+
+4) - CAP THEOREM -->>
+
+                     it states that a distributed system can only provide two of three properties simultaneously. Consistency, availability, and partition-
+                     tolerance. The theorem formalises the tradeoff between consistency and availability when there's a partition.
+
+5) - CAP THEOREM NOSQL DATABASES -->>
+
+        (a) - CA databases -> CA databases enable consistency and availability across all nodes. Unfortunately, CA databases can't deliver fault
+                              tolerance. In any distributed system, partitions are bound to happen, which means this type of databaseisn't a very practical
+                              choice.
+        
+        (b) - CP databases -> It enables consistency and partition-tolerance, but not availabilty. When a partition occurs, the system has to turn off
+                              inconsistent nodes until the partition can be fixed. The CP system is structured so that there's only one primary node
+                              that receives all of the write requestsin a given replica set. Secondary nodes replicate the data in the primary nodes, so if 
+                              the primary node fails, a secondary nodes can stand-in. In banking sysem Availabilty isn't as important as consistency, so we can optimisation
+                              it (MongoDB).
+
+        (c) - AP databases: it enables availabilty and partition tolerance, but not consistency, but not consistency. In the event of partition, all nodes
+                            are available but they aren't updated.
+
