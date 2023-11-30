@@ -1,0 +1,10 @@
+***********************  THE MASTER SLAVE DATABASE CONCEPT ****************************
+
+1) - It is a general way to optimise IO in a system where number if requests goes way high that a single DB server is not able to handle it efficiently.
+
+2) - The true or latest data is kept in the Master DB thus write operations are directed there. Reading operations are done only from slaves.
+     This architecture serves the purpose of safeguarding  site eliability, availabiltiy, reduce latency etc. If a site receives a lot of traffic and 
+     the only available databse is one master, it will be overloaded with reading and writing requests. Making the entire system slow for everyone on the site.
+
+3) - DB replication will take care of distributing data from master machine to slave machines. this can be Synchronous and Asynchronous depending upon the 
+     system's needs.
