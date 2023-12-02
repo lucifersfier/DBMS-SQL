@@ -59,4 +59,15 @@
             (c) - ROLLBACK
             (d) - SAVEPOINT
 
-8) - 
+8) - MANAGING DATABASE(DDL)
+
+     (i) - Creation of DB ->
+
+        (a) - CREATE DATABASE IF  NOT EXISTS db-name;
+        (b) - USE db-name; // need to execute to choose on which DB CREATE TABLE etc commands will be executed.
+              // make switching between DBs possible.
+        (c) - DROP DATABASE IF EXISTS db-name; // dropping database.
+        (d) - SHOW DATABASES; //list of all DBs in the server.
+        (e) - SHOW TABLES; // list of all tables in the selected database.
+     
+     (ii) - 
