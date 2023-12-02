@@ -1,0 +1,62 @@
+*********************************       SQL     *********************************
+1) - Difference between SQL and MySQL -->>
+
+                SQL                      |                  MYSQL
+    (a) - Query Language.                |   (a) - MYSQL itself a RDBMS.
+    (b) - way to access data.            |   (b) - CRUD done on it using SQL
+
+2) - RDBMS is a software that enables us to implement designed relational model.
+     Example: MySQL, MS SQL, Oracle, IBM etc.
+     Table/Relation is the simplest form of data storage object in R-DB.
+     MySQL is open source RDBMS , and it uses SQL for all CRUD operations.
+
+3) - MySQL used client-server model, where client is CLI or frontend that used services provided by MySQL server.
+
+4) - IN SQL data types --->>>
+
+     size -->> TINY < SMALL < MEDIUM < INT < BIGINT
+
+5) - We can use SIGNED AND UNSIGNED which means 
+     TINYINT -->> (-128 TO 127) but if we changed it to Unsigned
+     UNSIGNED TINYINT -->> (0 TO 255)
+
+6) - SYNTAX ---->>>>
+
+                    CREATE TABLE table_name(
+                    col1 INT,
+                    COL2 INT UNSIGNED    
+                    );
+
+7) - Types of Command in SQL -->>
+
+     (i) - Data Definition Language -->> 
+
+            (a) - CREATE 
+            (b) - ALTER TABLE
+            (c) - DROP
+            (d) - TRUNCATE
+            (e) - RENAME
+
+     (ii) - DRL/DQL (Data Retrieval Language/ Data Query Language) -->>
+
+            (a) - SELECT
+
+     (iii) - Data Manipulation Language -->>
+
+            (a) - INSERT
+            (b) - UPDATE
+            (c) - DELETE
+
+     (iv) - Data Control Language -->>
+
+            (a) - GRANT
+            (b) - REVOKE
+
+     (V) - Transaction Control Language -->>
+
+            (a) - START TRANSACTION
+            (b) - COMMIT
+            (c) - ROLLBACK
+            (d) - SAVEPOINT
+
+8) - 
