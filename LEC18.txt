@@ -131,5 +131,20 @@
 
      (iii) - Data Retrieval Language -->>
         
-        (a) - 
+        (a) - SYNTAX -->>
+                            SELECT <set of column names> FROM <table_name>;
+
+        (b) - Order of execution from RIGHT to LEFT.
+        (c) - We can use SELECT keyword without using FROM clause using DUAL Tables.
+              Dual tables are dummy tables created by MYSQL, help users to do certain obvious actions without referring to user defined tables.
+              Example -> SELECT 55+11;
+                         SELECT now();
+                         SELECT ucase(); etc.
+        
+        (d) - WHERE -->>
+
+              
+
+       
+
 
