@@ -70,4 +70,66 @@
         (d) - SHOW DATABASES; //list of all DBs in the server.
         (e) - SHOW TABLES; // list of all tables in the selected database.
      
-     (ii) - 
+     (ii) - Creating a ORG Database -->>
+
+              CREATE DATABASE ORG;
+              SHOW DATABASES;
+              USE ORG;
+
+              CREATE TABLE WORKER(
+                     WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                     FIRST_NAME VARCHAR(255),
+                     LAST_NAME VARCHAR(255),
+                     SALARY INT(15),
+                     JOINING_DATE DATETIME,
+                     DEPARTMENT VARCHAR(255)
+              );
+
+              INSERT INTO WORKER(WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES
+              (001, 'NITTYANSH', 'SRIVASTAVA', '100000', '14-02-23 09.00.00', 'HR'),
+              (002, 'SHIVANSH', 'SRIVASTAVA', '200000', '15-03-23 10.00.00', 'SALES'),
+              (003, 'JAHNAVI', 'SRIVASTAVA', '300000', '16-12-23 11.00.00', 'IT'),
+              (004, 'AMAN', 'SAXENA', '500000', '18-11-23 12.00.00', 'HR');
+
+
+              SELECT *FROM WORKER;
+
+
+              CREATE TABLE BONUS(
+	              WORKER_REF_ID INT,
+	              BONUS_AMOUNT INT(10),
+	              BONUS_DATE DATETIME,
+	              FOREIGN KEY (WORKER_REF_ID)
+		              REFERENCES WORKER(WORKER_ID)
+		              ON DELETE CASCADE
+              );     
+
+              INSERT INTO BONUS
+	              (WORKER_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES
+		              (001, 25000, '16-02-23'),
+                            (002, 25600, '16-03-23'),
+                            (003, 29000, '16-03-23'),
+                            (004, 35000, '16-03-23');
+
+              SELECT* from BONUS;
+
+              CREATE TABLE TITLE(
+	              WORKER_REF_ID INT,
+                     WORKER_TITLE VARCHAR(255),
+                     AFFECTED_FROM DATETIME,
+                     FOREIGN KEY (WORKER_REF_ID)
+              		REFERENCES WORKER(WORKER_ID)
+                            ON DELETE CASCADE
+              );
+
+              INSERT INTO TITLE
+	              (WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES
+		              (001, 'MANAGER', '2016-02-20 00:00:00'),
+                            (002, 'EXECUTIVE', '2016-04-21 00:00:00'),
+                            (003, 'EXECUTIVE', '2016-04-20 00:00:00'),
+                            (004, 'MANAGER', '2016-05-20 00:00:00');
+
+     (iii) - Data Retrieval Language -->>
+        
+        (a) - 
+
