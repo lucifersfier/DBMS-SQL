@@ -143,7 +143,47 @@
         
         (d) - WHERE -->>
 
-              
+              (i) - Reduce rows based on given conditions.
+              (ii) - Example - SELECT *FROM customer WHERE age>18;
+                               SELECT *FROM worker WHERE DEPARTMENT='HR';
+       
+        (e) - BETWEEN -->>
+
+              (i) -  SELECT *FROM customer WHERE age between 0 AND 100;
+              (ii) - SELECT *FROM WORKER WHERE SALARY between 100000 and 400000;
+
+        (f) - IN -->>
+
+              (i) - Reduce OR conditions 
+              (ii) - Example - SELECT *FROM officers WHERE officer_name IN ('Lakshay','Maharana Pratap','Deepika');
+
+        (g) - AND/OR/NOT -->>
+
+              (i) - AND : WHERE cond1 AND cond2
+              (ii) - OR : WHERE cond1 OR cond2
+              (iii) - NOT : WHERE col_name NOT IN (1,2,3,4);
+
+        (h) - IS NULL -->>
+
+              (i) - EXAMPLE - SELECT *FROM customer WHERE prime_status is NULL;
+
+        (i) - PATTERN SEARCHING/WILDCARD('%','_') -->>
+
+              (i) - '%' any number of character from 0 to n. Similar to '*' asterisk in regex.
+              (ii) - '_' only one character.
+              (iii) - SELECT *FROM customer WHERE name LIKE '%p_';
+        
+        (j) - ORDER BY -->>
+        
+              (i) - Sorting the data retrieved using WHERE clause.
+              (ii) - ORDER BY <column-name> DESC;
+              (iii) - DESC = Descending and ASC = Ascending 
+              (iv) - e.g., SELECT *FROM customer ORDER BY name DESC;
+
+        (k) - GROUP BY -->>
+
+              (i) -   
+
 
 
 
