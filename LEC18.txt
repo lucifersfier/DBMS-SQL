@@ -182,7 +182,31 @@
 
         (k) - GROUP BY -->>
 
-              (i) -   
+              (i) - Group by clause is used to collect data from multiple records and group the result by one or more column. Ot is generally
+                    used in a SELECT statement.
+              (ii) - Groups into category based on column given.
+              (iii) - SELECT c1,c2,c3 FROM sample_table WHERE conf GROUP BY c1,c2,c3.
+              (iv) - All the column names mentioned after SELECT statement shall be repeated in GROUP BY, in order to successfully execute the query.
+              (v) - used with aggregation functions to perform various actions.
+              
+                  (a) - COUNT()
+                  (b) - SUM()
+                  (c) - AUG()
+                  (d) -  MIN()
+                  (e) - MAX()
+        
+        (l) - DISTINCT -->>
+
+              (i) - Find distinct values in the table.
+              (ii) - SELECT DISTINCT (col_name) FROM table_name;
+              (iii) - GROUP BY can also be used for the same.
+                      (a) - "Select col_name from table GROUP BY col_name;" same output as above DISTINCT query.
+                      (b) - SQL is smart enough to realise that if you are using GROUP BY and not using any aggregation function, then you 
+                            mean "DISTINCT".
+        
+        (m) - GROUP BY HAVING -->>
+
+              (i) -  
 
 
 
