@@ -206,7 +206,18 @@
         
         (m) - GROUP BY HAVING -->>
 
-              (i) -  
+              (i) - out of the categories made by GROUP BY, we would like to know only particular thing(cond).
+              (ii) - Similar to WHERE.
+              (iii) - Select COUNT (cust_id),country from customer GROUP BY country HAVING COUNT(cust_id)>50;
+              (iv) - WHERE VS HAVING
+
+                        (a) - Both have same function of filtering the row base on certain conditions.
+                        (b) - WHERE clause is used to filter the rows from the table based on specified conditions.
+                        (c) - HAVING clause is used to filter the rows from the groups based on the specified conditions.
+                        (d) - HAVING is used after GROUP BY while WHERE is used before GROUP BY clause.
+                        (e) -If you are using HAVING, GROUP BY is necessary.
+                        (f) - WHERE can be used with SELECT, UPDATE & DELETE keywords while GROUP BY used with SELECT.
+
 
 
 
