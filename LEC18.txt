@@ -218,6 +218,20 @@
                         (e) -If you are using HAVING, GROUP BY is necessary.
                         (f) - WHERE can be used with SELECT, UPDATE & DELETE keywords while GROUP BY used with SELECT.
 
+      (iv) - CONSTRAINTS (DDL) -->>
+
+               (i) - Primary Key -> PK is not null, unique and only one per table.
+               (ii) - Foreign Key ->
+                                    (a) - FK refers to PK of other table.
+                                    (b) - Each relation can having any number of FK.
+                                    (c) - CREATE TABLE ORDER(
+                                          id INT PRIMARY KEY,
+                                          delivery_date DATE,
+                                          order_placed_date DATE,
+                                          cust_id INT,
+                                          FORIEGN KEY (cust_id) REFERENCES customer(id)
+                                          );
+            
 
 
 
