@@ -231,6 +231,61 @@
                                           cust_id INT,
                                           FORIEGN KEY (cust_id) REFERENCES customer(id)
                                           );
+                
+                (iii) - UNIQUE ->
+
+                                    (a) - Unique, can be null, table can have multiple unique attributes.
+                                    (b) - CREATE TABLE customer(
+                                          .......
+                                          email VARCHAR(1024) UNIQUE,
+                                          .......
+                                          );
+                (iv) - CHECK ->
+
+                                    (a) - CREATE TABLE customer(
+                                          ...
+                                          CONSTRAINT age_check CHECK(age>12),
+                                          ...
+                                          );
+                                    (b) - "age_check", can also avoid this, MySQL generates name of constraint automatically.
+                 (v) - DEFAULT ->
+
+                                    (a) - Set default value of the column.
+                                    (b) - CREATE TABLE account(
+                                          ....
+                                          saving-rate DOUBLE NOT NULL DEFAULT 4.25,
+                                          ....
+                                          );
+                 
+                 (vi) - An attribute can be PK and FK both in a table.
+
+                 (vii) - ALTER OPERATions ->
+
+                                    (a) - Changes Schema 
+                                    (b) - ADD
+                                          (i) - Add new Column
+                                          (ii) - ALTER TABLE table_name ADD new_col_name datatype ADD new_col_name_2 datatype;
+                                          (iii) - example - ALTER TABLE customer ADD age INT NOT NULL;
+                                    (c) - MODIFY
+                                          (i) - Change datatype of an attribute.
+                                          (ii) - ALTER TABLE table-name MODIFY col-name col-datatype;
+                                          (iii) - Example - VARCHAR TO CHAR
+                                                            ALTER TABLE customer MODIFY name CHAR(1024);
+                                    (d) - CHANGE COLUMN 
+                                          (i) - Rename Column name.
+                                          (ii) - ALTER TABLE table-name CHANGE COLUMN old-col-name new-col-name new-col-datatype;
+                                          (iii) - Example - ALTER TABLE customer CHANGE COLUMN name customer-name VARCHAR(1024);
+                                    
+                                    (e) - DROP COLUMN
+                                          (i) - Drop a column completely.
+                                          (ii) - ALTER TABLE table-name DROP COLUMN col-name;
+                                          (iii) - Example - ALTER TABLE customer DROP COLUMN middle-name;
+                                    
+                                    (f) - RENAME
+                                          (i) - Rename table name itself.
+                                          (ii) - ALTER TABLE table-name RENAME TO new-table-name;
+                                          (iii) - Example - ALTER TABLE customer RENAME TO customer-details;
+
             
 
 
