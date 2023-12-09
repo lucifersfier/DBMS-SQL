@@ -286,6 +286,20 @@
                                           (ii) - ALTER TABLE table-name RENAME TO new-table-name;
                                           (iii) - Example - ALTER TABLE customer RENAME TO customer-details;
 
+      (iv) - DATA MANIPULATION LANGUAGE -> 
+ 
+                  (i) - INSERT ->
+
+                        (a) - INSERT INTO table-name(col1,col2,col3) VALUES(v1,v2,v3),val(v1,v2,v3);
+                  
+                  (ii) - UPDATE ->
+
+                        (a) - UPDATE table_name SET col1 = 1,col2 = 'abc' WHERE id = 1;
+
+                  
+
+                  
+
             
 
 
@@ -294,3 +308,4 @@
        
 
 
+ 
