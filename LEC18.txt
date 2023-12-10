@@ -295,6 +295,16 @@
                   (ii) - UPDATE ->
 
                         (a) - UPDATE table_name SET col1 = 1,col2 = 'abc' WHERE id = 1;
+                        (b) - update multiple rows e.g.,
+                              (i) - UPDATE student SET standard = standard + 1;
+                        (c) - ON UPDATE CASCADE 
+                              (i) - Can be added to the table while creating constraints. Suppose there is a 
+                                    situation where we have two tables such that primary key of one of the 
+                                    table is foreign key for another table. If we update the primary key of the first
+                                    table then using the ON UPDATE CASCADE foreign key of the second table automatically updated.
+                        (d) - DELETE 
+                              (i) - Delete from table-name WHERE id = 1;
+
 
                   
 
