@@ -304,6 +304,15 @@
                                     table then using the ON UPDATE CASCADE foreign key of the second table automatically updated.
                         (d) - DELETE 
                               (i) - Delete from table-name WHERE id = 1;
+                              (ii) - Delete from table-name;//all rows will be deleted.
+                              (iii) - DELETE CASCADE - (to overcome DELETE constraint of Referential constraints)
+                                      (a) - What would happen to child entry if parent's table entry is deleted?
+                                      (b) - CREATE TABLE order(
+                                            order_id int primary key,
+                                            delivery_date date,
+                                            cust_id int,
+                                            foreign key(cust_id) REFERENCES customer(id) ON DELETE CASCADE
+                                            );
 
 
                   
