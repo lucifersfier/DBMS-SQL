@@ -389,6 +389,46 @@
 
 SET OPERATIONS -->>
 
+                  (i) - It is used to combine multiple select statements.
+                  (ii) - It always gives distinct rows.
+                  (iii) - UNION -->>
+
+                                    (i) - It combines two or more select statements.
+                                    (ii) - SELECT *FROM table_name1
+                                           UNION
+                                           SELECT *FROM table_name2
+                                    (iii) - Number of column, order of column must be same for both the table.
+                  (iv) - INTERSECT -->>
+
+                                    (i) - Returns common values of the tables.
+                                    (ii) - SELECT DISTINCT column_list FROM table_1 INNER JOIN table_name2 USING(join_cond)
+                  (v) - MINUS -->>
+
+                                    (i) - This operator returns the distinct row from the first table taht does not occur in the second table.
+                                    (ii) - SELECT column_list FROM table_name1 LEFT JOIN table_name2 ON condition 
+                                           WHERE table_name2.column_name is NULL.
+
+
+SUB QUERIES ------>>>>>>>>>>>.
+
+                  (i) - Outer query depends on inner query.
+                  (ii) - Alternative to joins.
+                  (iii) - Nested queries.
+                  (iv) - SELECT column_list(s) FROM table_name WHERE column_name OPERATOR 
+                         (SELECT column_list(s) FROM table_name [WHERE]);
+                  (v) - It exist mainly in 3 clauses ->
+                        (a) - Inside a where clause
+
+                              SELECT MAX(rating) FROM (SELECT *FROM movie WHERE country='India') as temp;
+                        
+                        (b) - Inside a FROM clause 
+
+                              SELECT (SELECT column_list(s) FROM T_name WHERE condition), columnList(s) FROM T2_name WHERE condition;
+
+                        (c) - Inside a SELECT clause
+
+                              SELECT columnLists(s) FROM (SELECT columnLists(s) FROM table_name WHERE [condition]) as new_table_name;
+
 
 
 
