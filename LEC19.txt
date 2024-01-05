@@ -1,0 +1,10 @@
+*************************   PRACTICE SQL QUERIES *************************
+
+-- Q1 - Write an SQL query to fetch "FIRST_NAME" from worker table using the alias name as <WORKER_NAME>.
+
+SELECT first_name AS WORKER_NAME FROM worker;
+
+-- Q2 - write an SQL query to fetch 'FIRST_NAME' from worker table in upper case.
+
+SELECT upper(first_name) FROM worker;
+
