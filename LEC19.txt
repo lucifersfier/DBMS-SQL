@@ -8,3 +8,77 @@ SELECT first_name AS WORKER_NAME FROM worker;
 
 SELECT upper(first_name) FROM worker;
 
+-- Q3 - write an SQL query to fetch unique values of DEPARTMENT from worker table.
+
+SELECT DISTINCT department FROM worker;
+-- USING GROUP BY 
+SELECT department FROM worker GROUP BY department;
+
+-- Q4 - Write an SQL query to print first three characters of first_name from worker table.
+
+SELECT substring(first_name,1,3) FROM worker;
+
+-- Q5 - Write an SQL query to find the postion of the alphabet ('b') in the first name column 'Amitabh' from worker table.
+
+select position('Y' IN 'NITTYANSH') from worker where first_name = 'NITTYANSH'; 
+
+-- Q6 - write an SQL query to print the first_name from worker table after removing white spaces from the right side.
+
+SELECT RTRIM(first_name) FROM worker;
+
+-- Q7 - write an SQL query to print the first_name from worker table after removing white spaces from the left side.
+
+SELECT LTRIM(first_name) FROM worker;
+
+-- Q8 - Write an SQL query that fetches the unique values of DEPARTMENT from worker table and prints its  length.
+
+SELECT DISTINCT department, LENGTH(department) FROM worker;
+
+-- Q9 - Write an SQL query to print the first_name from worker table after replacing 'a' with 'A'.
+
+SELECT REPLACE(first_name,'a','A') FROM worker; 
+
+-- Q10 - Write an SQL query to print the first_name and last_name from worker table into a single column COMPLETE_NAME.
+
+SELECT CONCAT(first_name,' ', last_name) AS COMPLETE_NAME from worker;
+
+-- Q11 - write an SQL query to print all worker details from the worker table order by first_name ASCENDING.
+
+SELECT *from worker ORDER BY first_name;
+
+-- Q12 - write an SQL query to print all worker details from the worker table order by first_name ASCENDING and department descending.
+
+SELECT *FROM worker ORDER BY first_name ASC, department DESC;
+
+-- Q13 - write an SQL query to print details for workers with the first name as "Vipul" and "Satish" from worker table.
+
+SELECT *FROM worker WHERE first_name IN ('Nittyansh','Shivansh');
+
+-- Q14 - write an SQL query to print details for workers excluding with the first name as "Vipul" and "Satish" from worker table.
+
+SELECT *FROM worker WHERE first_name NOT IN ('Nittyansh','Shivansh');
+
+-- Q15 - Write an SQL query to print details of workers with department name as 'Sales'.
+
+SELECT *FROM worker WHERE department = 'Sales';
+SELECT *FROM worker WHERE department LIKE 'Sales%';
+
+-- Q16 - write an SQL query to print details of workers whose first_name contains 'a'.
+
+SELECT *FROM worker WHERE first_name LIKE '%a%';
+
+-- Q17 - write an SQL query to print details of workers whose first_name ends with 'a'.
+
+SELECT *FROM worker WHERE first_name LIKE '%a';
+
+-- Q18 - Write an SQL query to print details of workers whose first_name ends with 'h' and contains six alphabets.
+
+SELECT *FROM worker WHERE first_name LIKE '________h';
+
+-- Q19 - Write an SQL query to print the names of the workers whose salary lies between 10000 to 500000.
+
+SELECT first_name, last_name FROM worker Where Salary >= 200000 and Salary <= 5000000;
+
+-- Q20 - Write a SQL query to print details of the workers who have joined in Feb 23.
+
+Select *FROM worker WHERE YEAR(joining_date) = 2023 AND MONTH(joining_date) = 02;
