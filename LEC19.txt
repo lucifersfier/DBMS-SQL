@@ -82,3 +82,97 @@ SELECT first_name, last_name FROM worker Where Salary >= 200000 and Salary <= 50
 -- Q20 - Write a SQL query to print details of the workers who have joined in Feb 23.
 
 Select *FROM worker WHERE YEAR(joining_date) = 2023 AND MONTH(joining_date) = 02;
+
+-- Q21 - Write a SQL query to fetch the count of employees working in the department 'Admin'.
+
+SELECT count(department) FROM worker WHERE department = 'HR';
+
+-- Q22 - Write an SQL query to fetch worker full names with salaries>=300000 and <=1000000.
+
+SELECT concat(first_name,' ',last_name)  AS full_name FROM worker WHERE salary between 300000 and 1000000;
+
+-- Q23 - Write an SQL query to fetch the no. of workers for each department in the descending order.
+
+SELECT department,COUNT(worker_id) FROM worker GROUP BY department order by COUNT(worker_id) DESC;
+
+-- Q24 - Write an SQL query to print the details of the workers who are also managers.
+
+SELECT *FROM worker as w
+INNER JOIN TITLE as t
+ON w.worker_id = t.worker_ref_id
+WHERE worker_title = 'Manager';
+
+-- Q25 - Write an SQL query to fetch number (more than 1) of different titles in the ORG.
+
+
+SELECT worker_title, count(*) FROM title GROUP BY worker_title HAVING count(*)>1;
+
+-- Q26 - Write an SQL query to show only ODD rows from the table.
+
+SELECT *FROM worker WHERE MOD (worker_id,2) != 0;
+
+-- Q26 - Write an SQL query to show only EVEN rows from the table.
+
+SELECT *FROM worker WHERE MOD (worker_id,2) = 0;
+
+-- Q27 - Write a SQL query to clone a new table from another table.
+
+CREATE TABLE worker_clone LIKE worker;
+INSERT INTO worker_clone SELECT *FROM worker; -- For also cloning the data of worker in worker_clone
+
+-- Q28 - Write an SQL query to fetch intersecting records of two tables.
+
+SELECT worker.* FROM worker INNER JOIN worker_clone using(worker_id);
+
+-- Q29 - Write an SQL query to show records from one table that another table doesn't have.
+
+SELECT worker.* FROM worker LEFT JOIN worker_clone USING (worker_id) WHERE worker_clone.worker_id IS NULL;
+
+-- Q30 - Write an SQL query to show the current date and time.
+
+SELECT CURDATE();
+SELECT NOW();
+
+-- Q31 - Write an SQL query to show the top n (say 5) records of a table order by descending order.
+
+SELECT *FROM worker ORDER BY salary DESC LIMIT 5;
+
+-- Q32 - Write an SQL query to show the nth (say n =5) highest salary from a table.
+
+SELECT *FROM worker ORDER BY salary DESC LIMIT 4,1;
+
+-- Q33 - write an SQL query to determine the 5th highest salary without using LIMIT keyword.
+
+SELECT first_name,salary FROM worker w1 WHERE 4 = (SELECT COUNT(DISTINCT (w2.salary)) FROM worker w2 WHERE w2.salary >= w1.salary);
+
+-- Q34 - write an SQL query to fetch the list of employees with the same salary.
+
+SELECT w1.* FROM worker w1, worker w2 WHERE w1.salary=w2.salary and w1.worker_id != w2.worker_id;
+
+-- Q35 - write an SQL query to show the second highest salary from a table.
+
+SELECT *FROM worker ORDER BY salary DESC LIMIT 1,1;
+SELECT MAX(salary) FROM worker
+WHERE salary NOT IN (SELECT MAX(salary) FROM worker);
+
+-- Q36 - write an SQL query to show one row twice in results from a table.
+
+SELECT *FROM worker 
+UNION ALL
+SELECT *FROM worker ORDER BY worker_id;
+
+-- Q37 - write an SQL query to list worker_id who doesn't get bonus.
+
+SELECT worker_id FROM worker WHERE worker_id NOT IN (SELECT worker_ref_id FROM bonus);
+
+-- Q38 - write an SQL query to fetch the first 50% records from a table.
+
+SELECT *FROM worker WHERE worker_id <= (SELECT COUNT(worker_id)/2 FROM worker);
+
+-- Q39 - Write an SQL query to fetch the departments that have less than 4 people in it.
+
+SELECT department, COUNT(department) as depCount FROM worker GROUP BY department having depCount < 2;
+
+-- Q40 - write an SQL query to show all departments along with the number of people in there.
+
+SELECT DISTINCT department, COUNT(department) AS depCount FROM worker GROUP BY department;
