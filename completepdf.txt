@@ -1,0 +1,1086 @@
+1) - What is Data?
+Ans - Data is a collection of raw and unorganized facts and details.
+      It does not carry any specific purpose and has no significance by itself.
+2) - Types Of Data 
+     (a) - Quantitative 
+     (b) - Qualitative
+3) - What is Information ?
+Ans - Processed, Organized and Structured data.
+      It provides context of the data and enables decision making.
+4) - Difference between Data V/s Information
+Ans - (a) - Data is a collection of facts, while information puts those facts into the context.
+      (b) - Data isn't sufficient for decision making, but you can make decisions based on information.           
+5) - What is Database ?
+Ans - Database is an electronic place where data is stored in a way that it can be easily accessed, managed and updated.
+6) - What is DBMS ?
+Ans - DBMS is a collection of interrelated data and a set of programs to access those data.
+      The primary goal of a DBMS is to provide a way to store and retrieve database information that is both convenient and efficient.
+7) - DBMS vs File System (ADVANTEGES OF DBMS)
+Ans - (a) - Data Redundancy and inconsistency
+      (b) - Difficulty in accessing data
+      (c) - Data isolation
+      (d) - Integrity Problems 
+      (e) - Atomicity Problems
+      (f) - Concurrent-access anomalies
+      (g) - Security Problems
+
+  ######################       DBMS ARCHITECTURE       ###########################
+  1) - View of Data (Three Schema Architecture) ----->>>>>
+  The major purpose of DBMS is to provide users with an abstract view of the data.
+  The System hides certain details of how the data is stored and maintained
+The main objective of three level Architecture is to enable multiple users to access the same data, with a personalized view while storing the underlying data only once.
+        (a) - PHYSICAL LEVEL - 
+              i) - It describes how the data is stored.
+              ii) - It talks about storage allocation, data compression and encryption etc.
+              iii) - GOAL: we must define algorithms that allow efficient access to data.
+        (b) - LOGICAL LEVEL - 
+              i) - It describes the design of the database at the conceptual level, describes what data are 
+                   stored in the database, and what relationships exist among those data.
+              ii) - Users at LOGICAL LEVEL doesn't need to be aware about the PHYSICAL LEVEL Structures.
+              iii) - GOAL: ease to use.
+        (c) - VIEW LEVEL - 
+              i) - It provides different view to different end users.
+              ii) - Each view schema describes the database part that a particular user group is interested 
+                    and hides the remaining database from the user group.
+              iii) - At the external level, a database contains several schemas that sometimes called as
+                     subschema. The subschema is used to describe the ifferent view of the database.
+              iv) - It provides security mechanism to prevent users from accessing certain parts of database.
+  2) - INSTANCES AND SCHEMAS ----->>>>>
+        a) - The collection of  information stored in the DB at a particular moment is called an instance of database.
+        b) - Schema is Structural description of data, Schema doesn't change frequently. Data may change frequently.
+        c) - We have three types of schemas, PHYSICAL, LOGICAL AND several VIEW schemas called SUBSCHEMAS.
+  3) - DATA MODELS ----->>>>>>
+        a) - It provides a way to describe the design of a database at logical level.
+        b) - It is a collection of conceptual tools for describing data, data relationships, data semantics and and consistency constraints.
+        c) - EXAMPLE: ER model, Relational models, and object oriented model etc. 
+  4) - DATABASE LANGUAGES ------>>>>>
+        a) - DDL to define the database.
+        Example: CREATE TABLE, ALTER TABLE, DROP and TRUNCATE etc.
+        b) -  DML to manipulate the database.
+        Example: SELECT, UPDATE, INSERT and DELETE etc.
+        c) - TCL to control the transaction control system.
+        EXAMPLE: GRANT and REVOKE
+        d) - DCL to control the database system.
+        EXAMPLE: ROllBACK and CHECKPOINT etc.
+  5) - How is database accessed from application programs ?
+        a) - Applications interacts with database.
+        b) - API is provided to send DDL/DML statements to DB and retrieve the results.
+             (i) - OPEN DATABASE CONNECTIVITY (ODBC), Microsoft "C".
+             (ii) - JAVA DATABASE CONNECTIVITY (JDBC), Java.
+  6) - DATABASE ADMINISTRATOR ---->>>>>
+        a) - A person who has central control of both the data and the programs that access those data.
+        b) - Functions of DBA:
+             (i) - Schema definition.
+             (ii) - Storage Structure and access methods.
+             (iii) - Authorization Control.
+             (iv) - Routine maintenance.
+ 7) - DBMS APPLICATIONS ARCHITECTURE ---->>>>>>>
+        a) - T1 ARCHITECTURE - 
+             (i) - The client server and DB all present on the same machine.
+        b) - T2 ARCHITECTURE - 
+             (i) - client machine, which invokes DB system functionality at server end through query language statements.
+             (ii) - API standards like ODBC & JDBC are used to interact between client and server.
+        c) - T3 ARCHITECTURE - 
+             (i) - Client machine is just a frontend and doesn't contain any direct DB calls.
+             (ii) - Client machine communicates with App server, and App server communicated with DB system to access data.
+             (iii) - ADVANTAGES:
+                     (*) - Scalability due to distributed application servers.
+                     (**) - Data integrity App server acts as a middle layer between client and DB, which minimize the chances of data corruption.
+                     (***) - Security client can't directly access DB, hence it is more secure.
+
+#######################    ER Model   ########################
+
+1) - Data Model - collection of conceptual tools for describing data, data relationships, data semantics and consistency constraints.
+2) - ER MODEL - It is a high-level data model based on a perception of a real world that consists of a collection of basic objects, called entities and relationships among these objects.
+3) - ENTITY -  An entity is a "thing" or "object" in the real world.
+               (a) - It has Physical existence.
+               (b) - Entity can be uniquely identified.
+               (c) - There are two types of entity - (i) - Strong (ii) - Weak
+4) - ENTITY SET - It is a set of entities of the same type that that share the same properties, or attributes.
+                  example: Student and Customer of the bank
+5) - ATTRIBUTES - An entity is represented by a set of attributes.
+                  Each entity has a value for each of its attributes.
+                  For each attribute, there is a set of permitted values, called the domain.
+6) - TYPES OF ATTRIBUTES - 
+                  (a) - Simple
+                  (b) - Composite
+                  (c) - Single valued
+                  (d) - Multi-valued
+                  (e) - Derived 
+                  (f) - Null
+7) - Relationships - 
+                   (a) - association among two or more entities.
+                   (b) - Strong relationship between two independent entities.
+                   (c) - Weak relationship, between weak entity and its stron entity.
+
+8) - Degree of Relationship - 
+                   (a) - Number of entities participating in a relationship.
+                   (b) - Unary, Binary & Ternary are three types of relationships.
+9) - Relationship Constraints - 
+                   (a) - One to one : Citizen has Adhar Card.
+                   (b) - One to many : Citizen has vehicle. 
+                   (c) - Many to one : Course taken by professor.
+                   (d) - Many to Many : Customer buys product.
+10) - Participation Constraints - 
+                   (a) - Minimum cardinality constraints
+                   (b) - Weak entity has total participation constraint, but Strong may not have total.
+
+                   #################### EXTENDED ER FEATURES #############################
+
+1) - SPECIALISATION ----->>>>>
+    (a) - It is splitting up the entity set into further sub entity sets on the basis of their functionalities, 
+          specialities and features.
+    (b) - It is a Top-Down approach.
+    (c) - Example - Person(Superclass) entity set can be divided into (subclasses) -> customer, student and employee
+    (d) - Why specialisation ?
+          (i) - Certain attributes may only be applicable to a few entities of the parent entity set.
+          (ii) - Database designer can show the distinctive features of the sub entities.
+          (iii) - To group such entities we apply Specialisation, to overall refine the DB blueprint.
+2) - GENERALISATION ----->>>>>
+    (a) - It is just a reverse of Specialisation.
+    (b) - " is-a" relationship is present between subclass and Superclass.
+    (c) - It is a Bottom-up approach.
+    (d) - Why GENERALISATION ?
+          (i) - Makes DB more refine and Simpler.
+          (ii) - Common attributes are not repeated.
+3) - ATTRIBUTE INHERITANCE ----->>>>>
+    (a) - Both specialisation and generalisation, has attribute inheritance.
+    (b) - Example - customer and employee inherit the attributes.
+4) - PARTICIPATION INHERITANCE ----->>>>>
+    (a) - If a parent entity set participates in a relationship then it's child entity sets will also participate in that relationship.
+5) - AGGREGATION ----->>>>>
+    (a) - It's the technique to show relationships among relationships.
+    (b) - ABSTRACTION is applied to treat relationships as higher level entities. We can call it Abstract entity
+    (c) - Avoid Redundancy by aggregating relationship as an entity set itself.
+
+      ########### STEPS TO MAKE ER DIAGRAM  ###################################
+
+1) - Identify entity sets.
+2) - Identify attributes and their types.
+3) - Identify relationships and constraints(Mapping & Participation)
+
+********************* ER DIAGRAM of Banking System ****************************
+1) - Entity sets
+        (a) - Branch (b) - Customer (c) - Employee (d) - Saving A/c (e) - Current A/c (f) - Loan (g) - Payment(Loan)
+2) - Attributes
+        (a) - Branch ---->>>>
+                name, city, assets, liabilities
+        (b) - Customer ---->>>>
+                Customer-id, name, address, contact no., DOB, age
+        (c) - Employee ---->>>>
+                Emp-id, name, service, contact no., dependent name, years of service, start date
+        (d) - Saving A/c ---->>>>
+                Interest rate, daily withdrawal limit
+        (e) - Current A/c ---->>>>
+                Per transaction charges, overdraft-amount.
+        (f) - Generalized Entity ---->>>> (Account)
+                Account number, Balance
+        (g) - Loan 
+                Loan_number, amount
+        (i) - Weak Entity Payment ---->>>>
+                Payment_number, date, amount
+3) - Relationships & constraints ---->>>>
+        (i) - Customer(m) borrow loan(n)
+        (ii) - Loan(n) originated_by Branch(1)
+        (iii) - Loan(1) Loan_payment Payment(n)
+        (iv) - Customer(m) deposit Account(n)
+        (v) - Customer(n) banker Employee(1)
+        (vi) - Employee(n) managed_by Employee(1)
+
+<<<----- NOW WE CAN DRAW OUR ER DIAGRAM OF BANKING MANAGEMENT SYSTEM ----->>>
+   	        ------------->>>>>>>>> Designing the ER Model <<<<<<<<-------------
+
+------>>>>>>  Meta - DB formulate using ER - Model  <<<<<<<--------
+1) - Features & Use Case ---->>>>
+        (i) - Profile -->> User_profiles -->> friends
+        (ii) - User Can Post
+        (iii) - Post -->> Contains -->> text_content, images, videos
+        (iv) - Post ---->>> Like, Comment
+    (a) - Identify Entity Sets
+            (i) - User_profile
+            (ii) - User_post
+            (iii) - post_comment
+            (iv) - post_like
+    (b) - Attributes + types
+            (i) - User_profile
+                    name, username, email, password, contact_no, DOB, age
+            (ii) - User_post
+                    Post_id, text_content, image, video, created_timestamp, modified_timestamp
+            (iii) - post_comment
+                    post_comment_id, text_content, timestamp
+            (iv) - post_like
+                    post_like_id, timestamp
+    (c) - Relationships and constraints
+            (i) - User_profile(n) friendship User_profile(n)
+            (ii) - User_profile(1) Posts User_post(n)
+            (iii) - User_profile(1) can post_like(n)
+            (iv) - User_profile(1) Comments post_comment(n)
+            (v) - User_post(1) has post_comment(n)
+            (vi) - User_post(1) has post_like(n)
+
+ *************************      RELATIONAL MODEL        *******************************
+
+1) - 2 steps to design Database
+        (a) - ER Model -->> ER Diagram
+        (b) - Relational Model
+2) - Relational Model organises the data in the form of relations(tables).
+3) - A row in a table represents a relationship among a set of values, and table is collection of such relationships.
+4) - Tuple defines the record of the table and the column defines the attributes of the table.
+5) - Relation Schema defines the design and structure of the relation, contains the name of the relation and all the attributes.
+6) - Number of attributes in a relation is known as Degree of table.
+7) - Total number of tuples in a relation is known as Cardinality.
+8) - Relational Key : -->>  Set of attributes which can uniquely identify an each tuple.
+9) - Relational Model keys ---->>>>
+        (a) - Super Key: Any P&C attributes present in a table which can uniquely identify each tuple.
+        (b) - Candidate Key: Minimal subset of super keys.
+        (c) - Primary Key: Selected from the candidate key and has the least number of Attributes
+        (d) - Alternate Key: All except Primary key
+        (e) - Foreign Key: 
+                (i) - it creates relation between two tables.
+                (ii) - It helps to cross reference between two different relations.
+        (f) - Composite Key: Primary key formed using at least two attributes.
+        (g) - Compound Key: Primary Key which is formed using two foreign key.
+        (h) - Surrogate Key: 
+                (i) - Synthetic Primary Key
+                (ii) - Generated automatically by DB, usually an integer value.
+                (iii) - maybe used as Primary key.
+10) - Integrity Constraints 
+        (i) - CRUD operations must be done with some integrity policy so that DB is always consistent.
+        (ii) - Introduced so that we do not accidently corrupt the DB.
+        (iii) - Domain Constraints ---->>>>
+                (a) - Restricts the Value in the attribute of a relation, specifies the relation.
+                (b) - Restricts the data types of every attributes.
+        (iv) - Entity Constraints ---->>>>
+                (a) - Every relation should have Primary key
+                (b) - Primary Key Can't be Null
+        (v) - Referential Constraints ---->>>>>
+                (a) - Insert Constraint - value can't be inserted in child table if the value isn't lying in the 
+                                          parent table.
+                (b) - Delete Constraint - Value can't be deleted from the parent table if the value is lying in the child table
+11) ON DELETE CASCADE -->>
+Ques - can we delete value from parent table if the value is lying in the child table without violating the delete constraints?
+Ans – Yes, Delete value from parent table -->> delete corresponding entry from child table too.
+create table order(order_id,int PK,____,____,cust_id,int referencing customer on delete cascade)
+Ques - can foreign key have Null Values ? (On Delete NULL)
+Ans - Yes on delete value from parent table -->> put corresponding foreign key value Null.
+12) - Key Constraints -->>
+        (a) - NOT NULL
+        (b) - UNIQUE
+        (c) - DEFAULT
+        (d) - CHECK
+        (e) - PRIMARY Key
+        (f) - FOREIGN key
+
+***********************  Normalisation ***********************
+
+1) - It is a step towards database optimisation.
+2) - FUNCTIONAL DEPENDENCY (FD): 
+     (a) - It's a relationship between the primary key attribute of the relation to that of the other attribute of the relation.
+     Types of FD -->>
+            (a) - Trivial FD -->>
+                                 A->B has Trivial FD if B is a subset of A.
+            (b) - Non Trivial FD -->>
+                                    A->B has a non Trivial FD if B is not a subset of A.
+3) - Rules of FD:
+        (a) - Reflexive: if A is a set of attributes and B is a subset of A then A->B holds.
+        (b) - Augmentation: If B can be determined from A, then adding an attribute to this FD won't change anything.
+        (c) - Transitivity: if A determines B and B determines C, we can say that A determines C.
+4) - Why Normalisation ?
+    To avoid redundancy in the DB, not to store redundant data.
+5) - What happen if we have redundant data ?
+     Insertion, Deletion and Updation anomalies arises.
+6) - Anomalies:
+    (a) - Insertion: When certain attribute can't be inserted into the DB without the presence of other data.
+    (b) - Deletion: It refers to the situation where the deletion of data results in the unintended loss of some other important data.
+    (c) - Updation: It is when an update of a single data value requires multiple rows of data to be updated.
+7) - Normalisation:
+    It is used to minimise the redundancy from a relations.
+    It divides the composite attributes into individual attributes.
+8) - Types of Normal Forms:
+    (a) - 1NF -->> Every relation cell must have atomic value. Relation must not have multi-valued attribute.
+    (b) - 2NF -->> Relation must be in 1NF. There shouldn't be any partial dependency.
+                   (i) - All non-prime attributes must be fully dependent on primary key.
+                   (ii) - Non Prime attribute can't depend on the part of the primary key. 
+    (c) - 3NF -->> Relation must be in 2NF. No Transitivity dependency exists.
+                   (i) - Non prime attribute should not find a non prime attribute.
+    (d) - BCNF -->> Relation must be in 3NF. A->B must be a super key.
+                    (i) - we must not derive prime attribute from any prime or non prime attribute.
+9) - Advantages of Normalisation:
+        (i) - It helps to minimise data redundancy.
+        (ii) - greater overall database organization.
+        (iii) - Data Consistency id maintained in DB.
+
+***************************     TRANSACTION     ****************************
+
+1) - A unit of work done against the DB in a logical sequence.
+     Sequence is very important in TRANSACTION
+     It is a logical unit of work that contains one or more SQL statements. The result of all these statements in a 
+     transaction either get completed successfully or if at any point any failure happens it gets rollbacked.
+2) - ACID Properties:
+     To ensure integrity of the data, we require that the DB system maintain the following properties of the transaction.
+ATOMICITY: Either all operations of transaction are reflected properly in the database, or none are.
+CONSISTENCY: Integrity Constraints must be maintained before and after transaction.
+                            DB must be consistent after transaction happens.
+ISOLATION: Even though multiple transactions may execute concurrently, the system guarantees that, for every pair of transactions Ti and Tj, it appears to Ti that either Tj finished execution before Ti started, or Tj started execution after Ti finished.
+Thus, each transaction is unaware of other transactions executing concurrently in the system.
+Multiple transactions can happen in the system in isolation, without interfering each other.
+DURABILITY: After transaction completes successfully, the changes it has made to the database persist, even if there are system failures.
+3) - TRANSACTION States:
+        (i) - Active State: The very first State of the life cycle of the transaction, all the read and write operations are being performed. If they execute without any error the T comes to partially committed state. Although if any error occurs then it leads to a Failed state.
+        (ii) - partially Committed state: After transaction is executed the changes are saved in the buffer in the main memory. If the changes made are permanent on the DB then the state will transfer to the committed state and if there is any failure then T will go to failed state.
+        (iii) - Committed State: When updates are made permanent on the DB. Then the T is said to be in the committed state. Rollback can't be done form the committed states. New consistent state is achieved at this stage.
+        (iv) - Failed State: When T is being executed and some failure occurs. Due to this it is impossible to continue the execution of the T.
+        (v) - Aborted State: when T reaches the failed state, all the changes made in the buffer are reversed. After that the T rollbacked completely. T reaches abort state after roll back. DB's state prior to the T is achieved.
+        (vi) - Terminated State: A transaction is said to have terminated if has either committed or aborted.
+
+******* HOW TO IMPLEMENT ATOMICITY AND DURABILITY IN TRANSACTION *******
+
+Recovery Mechanism Component of DBMS supports atomicity and durability.
+1) - SHADOW-COPY SCHEME -->>
+        Based on making copies of DB.
+        Assumption only one transaction (T) is Active at a time.
+        A pointer called DB-pointer is maintained on the disk; which at any instant points to current copy of DB.
+        T -> wants to Modify data in DB, first create a complete copy of DB.
+        All further updates are done on new DB copy leaving the original copy untouched.
+        If at any point the T has to be aborted the system deletes the new copy. And the old copy is not affected.
+        IF T success, it is committed as,
+                    (i) - OS makes sure all the pages of the new copy of the DB written on the disk.
+                    (ii) - DB system updates the db-pointer to point to the new copy of the DB.
+                    (iii) - New copy is now the current copy of DB.
+                    (iv) - The old copy is deleted
+                    (v) - The T is said to have been COMMITTED at the point where the updated db-pointer is written to disk.
+        Atomicity:
+                (a) - if T fails at any time before db-pointer is updated, the old content of DB aren't affected.
+                (b) - T abort can be done by just deleting the new copy of DB.
+                (c) - Hence, either all updates are reflected or none.
+        Durability:
+                (a) - Suppose, system fails are any time before the updated db-pointer is written to disk.
+                (b) - When the system restarts, it will read db-pointer & will thus, see the original content of DB and none of the effects of T will be visible.    
+                (c) - T is assumed to be successful only when db-pointer is updated.
+                (d) - If system fails after db-pointer has been updated. Before that all the pages of the new copy were written to the disk. Hence, when system restarts it will read new DB copy.
+        The implementation is dependent on write to the db-pointer being atmoic. Luckily, disk system provide atomic updates to entire block or at least a disk sector. So, we make sure db-pointer lies entirely in a single sector.
+        By storing db-pointer at the beginning of a block.
+        Inefficient, as entire DB is copied for every transaction.        
+2) - LOG BASE RECOVERY METHODS -->>
+        The log is a sequence of records. Log of each transaction is maintained in some stable storage so that if any failure occurs, then it can be recovered from there.
+        If any operation is performed on the database, then it will be recorded in the log.
+        But the process of storing the logs should be done before the actual transaction is applied in the database.
+
+        DEFERRED DB MODIFICATIONS:
+                (i) - Ensuring atomicity by recording all the DB modifications in the log but deferring the execution of all the write operations until the final action of the T has been executed.
+                (ii) - Log information is used to execute deferred writes when T is completed.
+                (iii) - If system crashed before the T completes, or if T is aborted, the information in the logs are ignored.
+                (iv) - If T completes, the records associated to it in the log file are used in executing the deferred writes.
+                (v) - If failure occur while this updating is taking place, we preform redo.
+        IMMEDIATE DB MODIFICATIONS:
+                (i) - DB modifications to be output to the DB while the T is still in active state.
+                (ii) - Log information is used to execute deferred writes when T is completed.
+                (iii) - In the event of CRASH or T failure, system uses old value field of the log records to restore modified values.
+                (iv) - Update takes place only after log records in a stable storage.
+                (v) - Failure Handling:
+                        (a) - System failure before T completes, or if T aborted, then old value field is used to undo the T.
+                        (b) - If T completes and system crashes, then new value filed is used to redo T having commit logs in the logs.
+  
+       ########################        INDEXING IN DBMS        #############################
+
+1) - Indexing is used to optimise the performance of a database by minimising the number of disk accesses required when a query is processed.
+2) - The index is a type of data structure. it is used to locate and access the data in a database table
+     quickly.
+3) - Indexing is optional, but increases access speed. It is not the primary mean to access the tuple, it 
+     is the secondary mean.
+4) - Index file is always sorted.
+5) - Indexing Methods -->>
+                         (1) - Primary Index(Clustering Index) - A file may have several indices, on different 
+                         search keys. 
+A primary index is an index whose search key also defines the sequential order of the file.
+ (a) - Dense and Sparse indices - The Dense Index contains an index record for every search
+key value in the data file. Sparse Index helps you to resolve the issues of dense indexing in DBMS. A range of index columns stores the same data block address, and when data needs to be retrieved, the block address will be fetched.
+ (b) - Based on Key attribute - Data file is sorted w.r.t primary key attribute. Primary key will be used as search-key in index. Sparse index will be formed i.e, no. of entries in the index file  is equal to  no. of blocks in datafile.
+ (c) - Based on non-key attribute - Data file is sorted w.r.t non-key attribute. No. of entries in the index = unique non-key attribute value in the data file. This is dense index as, all the unique valus have an entry in the index file.
+ (d) - Multi-Level Index - Index with two or more levels. If the single level index become enough large that the binary search itself, we can break down indexing into multiple levels.
+
+ (2) - Secondary Index (Non-Clustering index) - Data file in unsorted. Hence, Primary indexing is not possible. It can be done on key or non-key attribute. It is called secondary indexing because normally one indexing is already done. It's an example of Dense index
+
+6) - Advantages of Indexing -->>
+          (a) - faster access and retrieval of data.
+          (b) - IO is less
+7) - limitations of Indexing -->>
+          (a) - Additional space to store index table.
+          (b) - Indexing decrease performance in INSERT, DELETE and UPDATE query.
+       
+********************* NoSql vs SQL DB *************************
+
+1) - NoSQL databases are non-tabular databases and store data differently than relational tables. 
+     NoSQL databases are likely document, key-value, wide-column and graph.
+     They provide flexible schemas and scale easily with large amounts of data and high user loads.
+     (a) - They are schema free 
+     (b) - Data structure used aren't tabular, they are more flexible, has the ability to adjust dynamically.
+     (c) - Most of the NoSQL are open sources and has the capability of horizontal scaling.
+     (d) - It just stores data in some other format other than relational. 
+2) - NoSQL databases allow developers to store huge amounts of unstructured data, giving them a lot of flexibility.
+3) - some NoSQL databases like MongoDB provides these capabilities.
+4) - NoSQL DB Advantages --->>
+        (a) - Flexible schema : RDBMS has pre-defined schema, which become an issue when we don't have all the data with us or we need to change the schema.
+        (b) - Horizontal scaling : 
+  (a) - It is also known as Scale-out, refers to bringing on additional nodes to share the load.   This is difficult with relational databases due to the difficulty in spreading out related data across nodes. With non-relational databases, this is made simpler since collections are self-contained and not coupled relationally. This allows them to be distributed across nodes more simply, as queries do not have to "join" them together across nodes.
+ (b) - It is achieved through Sharding or Replica-Sets.
+ (c) - High Availability :  
+                      (a) - NoSQL databases are highly available due to its auto replication feature i.e., whenever any kind of failure happens data replicates itself to the preceding consistent state.
+                       (b) - if a server fails, we can access that data from another server as well, as in NoSQL
+database data is store at multiple servers.
+        	 (d) - Easy Insert and Read Operations: 
+          (a) - Queries in NoSQL databases can be faster than SQL databases. 
+                         (b) - But difficult delete or update operations.
+        	(e) - Caching mechanism
+        	(f) - NoSQL use case is more for Cloud applications.
+5) - When to use NoSql?
+        (a) - Fast-paced Agile development
+        (b) - Storage of structured and semi-structured data.
+        (c) - Huge volumes of Data
+        (d) - Requirements for scale-out architecture.
+        (e) - Modern application paradigms like micro-services and real-time streaming.
+6) - NoSQL Database Misconception -->>
+        (a) - Relationship data is best suited for relational databses.
+        (b) - NoSQL DB don't support ACID transactions.
+7) - Types of NoSQL Data Models -->>
+        (a) - Key-Value Stores :
+                               (i) - It uses compact, efficient index structures to be able to quickly and reliably locate a value by its key, making them ideal for systems that need to be able to find and retrieve data in constant time.
+                               (ii) - Use case - Shopping Carts & User Profiles 
+        (b) - Column-Oriented : 
+                               (i) - The data is stored such that each row of a column will be next to other rows from that same column.
+                               (ii) - While a relational DBs stores data in a rows and reads data row by row, a column store is organised as a set of columns. This means that when you want to run analytics on a small number of columns, you can read those columns directly without consuming memory with the unwanted data. Columns are often of the same type and benefit form more efficient compression, making reads even faster.
+                               (iii) - Use case - Analytics 
+        (c) - Document Based Stores :
+                               (i) - This DB stores data in documents similar to JSON objects. 
+                               (ii) - Use Case - E-commerce platforms and mobile app development industries.
+        (d) - Graph Based Stores :
+                               (i) - A Graph database focuses on the relationship between data elements. Each element is stored as a node.
+                               (ii) - A graph database is optimised to capture and search the connections between data elements, overcoming the overhead associated with joining multiple tables in SQL.
+                               (iii) - Use case - Fraud detection and Social Networks
+8) - NoSQL Databases Dis-advantages:
+                                (i) - Data Redundancy
+                                (ii) - Update & Delete operations are costly
+                                (iii) - All type of NoSQL Data model doesn't fulfil all of your application needs.
+                                (iv) - Doesn't support ACID properties in general
+                                (v) - Doesn't support data entry with consistency constraints.
+
+******************      Types Of Database     **********************
+1) - RELATIONAL DATABASES ---->>>>
+        (a) - They are based on Relational Model.
+        (b) - They are highly optimised for working with Structured Data.
+        (c) - They use a well known querying language through SQL.
+        (d) - Scalability issues (Horizontal Scaling).
+        (e) - Data become huge System become more complex.
+2) - Object Oriented Database ---->>>>
+        (a) - They are based on the Object-Oriented Programming paradigm.
+        (b) - In object Oriented Databases data is treated as an object.
+        (c) - All bits of information come in one instantly available object package instead of multiple tables.
+        ADVANTAGES -->>
+                (a) - Data storage and retrieval is easy and quick.
+                (b) - Relatively friendly to Model the advance real-world problems.
+        Disadvantages -->>
+                (a) - High complexity causes performance issues.
+                (b) - Doesn't support views like Relational Databases.
+                (c) - Example - ObjectDB, GemStone etc.
+3) - HIERARCHICAL DATABASES -->>
+        (a) - As the name suggests, the hierarchical database model is most appropriate for use cases in which the focus of information gathering is based on a concrete hierarchy, such as several individual employees reporting to a single department at a company.
+        (b) - The Schema for hierarchical databases is defined by its tree-like organisation.
+        (c) - The disk storage system is also inherently a hierarchical structure; these models can also be used as physical modes.
+        (d) - the major disadvantages of hierarchical databases as their inflexible nature. the one-to-many structures is not ideal for complex structures as it cannot describe relationships in which each child node has multiple parents’ nodes. Also, the tree like organisation of data requires top to bottom sequential searching, which is time consuming, and requires repetitive storage data in multiple different entities, which can be redundant.
+        (e) - Example - IBM, IMS
+4) - Network Databases -->>
+        (a) - Extension of hierarchical databases.
+        (b) - Organised in Graph structure 
+        (c) - M:N links may cause slow retrievals 
+        (d) - Example - Integrated data store (IDS), IDMS (Integrated Database Management System) etc.
+***********************            CLUSTERING IN DBMS      ******************************
+
+1) - Database Clustering is the process of combining more than one servers or instances connecting a single database.
+2) - Replicate the same datasets on different servers.
+3) - ADVANTAGESS -->>
+        (a) - Data Redundancy --> The Redundancy that clustering offers is requires and is quite certain due to the synchronisation. In case any of the servers had to face a failure due to any possible reason, the data is available at other servers to access.
+        (b) - Load Balancing --> Scalability doesn't come by default with the database. Basically, what load balancing does is allocating the workload among the different servers that are part of the cluster. This indicates that more users can be supported and if for some reasons if a huge spike in the traffic appears, there is a higher assurance that it will be able to support the new traffic. One machine is not going to get all of the hits. This can  provide scaling seamlessly as required. This links directly to high availability.
+        (c) - High Availability --> When you access a database, it implies that is available. High availability refers the amount of time a database is considered available. 
+4) - How does Clustering Work ?
+        In cluster architecture, all requests are split with many computers so that an individual user request is executed and produced by a number of
+        computer system. the clustering is serviceable definitely by the ability of load balancing and high availability. If one node collapses, the request is
+        handled by another node. Consequently, there are few or no possibilities of absolute system failures.
+
+*****************************  DATABASE OPTIMISATION  ***************************
+
+1) - A big problem can be solved easily when it is chopped into several smaller sub-problems. That is what the partitioning technique does.
+     It divides a big database containing data metrics and indexes into smaller and handy slices of data called partitions.
+     Once the databse is partitioned, the data definition language can easily work on the smaller partitioned slices, instead of handling the giant database together. This is how partitioning cuts down the problems in managing large database tables.
+2) - Partitioning is the technique used to divide stored database objects into separate servers. When we horizontally scale our machines/servers, we know that it gives us a challenging time dealing with relational databases as it's quite tough to maintain the relations.
+3) - Vertical Partitioning -->>
+     (a) - Slicing relation Vertically/column wise.
+     (b) - Need to access different servers to get complete tuples.
+4) - Horizontal Partitioning -->>
+     (a) - Slicing relation horizontally/row wise.
+     (b) - Independent chunks of data tuples are stored in different servers.
+5) -  Advantages of Partitioning -->>
+     (a) - Parallelism 
+     (b) - Availability
+     (c) - Performance 
+     (d) - Manageability
+     (e) - Reduce cost, as scaling-up or vertical scaling might be costly.
+6) - Distributed Database-->>
+     (a) - A single logical database that is, spread across multiple locations and logically interconnected by network.
+     (b) - This is the product of applying DB optimisation techniques like Clustering, Partitioning, and Sharding.
+7) - Sharding -->>
+     (a) - Technique to implement Horizontal Partitioning.
+     (b) - Sharding is the idea that instead of having all the data sit on one DB instance, we split it up and introduce a routing layer so that we can forward the request to the right instances that actually contain the data.
+     (c) - PROS ->
+        (i) - Scalabiltiy
+        (ii) - Availability
+     (d) - CONS ->
+        (i) - Complexity, making partitioning mapping, routing layer to be implemented in the system, Non-uniformity that creates the necessity of Resharding.
+        (ii) - Not well suited for analytical type of queries, as the data is spread across different DB instances.
+
+
+
+********************* 	CAP THEOREM     *********************************
+
+1) - CONSISTENCY: In a consistent system, all nodes see the same data simultaneously. When data is written to a single nod, it is then replicated across the other nodes in the system.
+2) - AVAILABILITY: When Availability is present in a distributed system, it means that the system remains operational all the time. This means that the system will operate even if there are multiple nodes down.
+3) - PARTITION TOLEARNACE: When a distributed system encounters a partition, it means that there's a break in communication between nodes. If a system is partition-tolerant, the system doesn't fail, regardless of whether messages are dropped or delayed between nodes within the system. To have partition tolerance, the system must replicate records across combination of nodes and networks.
+4) - CAP THEOREM -->>
+                     it states that a distributed system can only provide two of three properties simultaneously. Consistency, availability, and partition-
+                     tolerance. The theorem formalises the trade-off between consistency and availability when there is a partition.
+5) - CAP THEOREM NOSQL DATABASES -->>
+        (a) - CA databases -> CA databases enable consistency and availability across all nodes. Unfortunately, CA databases cannot deliver fault tolerance. In any distributed system, partitions are bound to happen, which means this type of database is not a very practical choice.
+        (b) - CP databases -> It enables consistency and partition-tolerance, but not availability. When a partition occurs, the system must turn off inconsistent nodes until the partition can be fixed. The CP system is structured so that there is only one primary node that receives all of the write requests in a given replica set. Secondary nodes replicate the data in the primary nodes, so if the primary node fails, a secondary node can stand-in. In banking system Availability isn't as important as consistency, so we can optimisation it (MongoDB).
+        (c) - AP databases: it enables availability and partition tolerance, but not consistency, but not consistency. In the event of partition, all nodes are available but they aren't updated.
+
+************ THE MASTER SLAVE DATABASE CONCEPT *********************
+
+1) - It is a general way to optimise IO in a system where number if requests goes way high that a single DB server is not able to handle it efficiently.
+2) - The true or latest data is kept in the Master DB thus write operations are directed there. Reading operations are done only from slaves.
+     This architecture serves the purpose of safe guarding site reliability, availability, reduce latency etc. If a site receives a lot of traffic and the only available database is one master, it will be overloaded with reading and writing requests. Making the entire system slow for everyone on the site.
+3) - DB replication will take care of distributing data from master machine to slave machines. this can be Synchronous and Asynchronous depending upon the  system's needs.
+
+*********************************       SQL     *********************************
+
+1) - Difference between SQL and MySQL -->>
+
+               	 SQL                      |                  MYSQL
+    (a) - Query Language.                |           (a) - MYSQL itself a RDBMS.
+    (b) - way to access data.            |          (b) - CRUD done on it using SQL
+
+2) - RDBMS is a software that enables us to implement designed relational model.
+     Example: MySQL, MS SQL, Oracle, IBM etc.
+     Table/Relation is the simplest form of data storage object in R-DB.
+     MySQL is open source RDBMS , and it uses SQL for all CRUD operations.
+3) - MySQL used client-server model, where client is CLI or frontend that used services provided by MySQL server.
+4) - IN SQL data types --->>>
+     size -->> TINY < SMALL < MEDIUM < INT < BIGINT
+5) - We can use SIGNED AND UNSIGNED which means 
+     TINYINT -->> (-128 TO 127) but if we changed it to Unsigned
+     UNSIGNED TINYINT -->> (0 TO 255)
+6) - SYNTAX ---->>>>
+                    CREATE TABLE table_name(
+                    col1 INT,
+                    COL2 INT UNSIGNED    
+                    );
+7) - Types of Command in SQL -->>
+     (i) - Data Definition Language -->> 
+            (a) - CREATE 
+            (b) - ALTER TABLE
+            (c) - DROP
+            (d) - TRUNCATE
+            (e) - RENAME
+     (ii) - DRL/DQL (Data Retrieval Language/ Data Query Language) -->>
+            (a) - SELECT
+     (iii) - Data Manipulation Language -->>
+            (a) - INSERT
+            (b) - UPDATE
+            (c) - DELETE
+     (iv) - Data Control Language -->>
+            (a) - GRANT
+            (b) - REVOKE
+     (V) - Transaction Control Language -->>
+            (a) - START TRANSACTION
+            (b) - COMMIT
+            (c) - ROLLBACK
+            (d) - SAVEPOINT
+8) - MANAGING DATABASE(DDL)
+     (i) - Creation of DB ->
+        (a) - CREATE DATABASE IF  NOT EXISTS db-name;
+        (b) - USE db-name; // need to execute to choose on which DB CREATE TABLE etc commands will be executed.
+              // make switching between DBs possible.
+        (c) - DROP DATABASE IF EXISTS db-name; // dropping database.
+        (d) - SHOW DATABASES; //list of all DBs in the server.
+        (e) - SHOW TABLES; // list of all tables in the selected database.
+     (ii) - Creating a ORG Database -->>
+              CREATE DATABASE ORG;
+              SHOW DATABASES;
+              USE ORG;
+              CREATE TABLE WORKER(
+                     WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                     FIRST_NAME VARCHAR(255),
+                     LAST_NAME VARCHAR(255),
+                     SALARY INT(15),
+                     JOINING_DATE DATETIME,
+                     DEPARTMENT VARCHAR(255)
+              );
+
+              INSERT INTO WORKER(WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES
+              (001, 'NITTYANSH', 'SRIVASTAVA', '100000', '14-02-23 09.00.00', 'HR'),
+              (002, 'SHIVANSH', 'SRIVASTAVA', '200000', '15-03-23 10.00.00', 'SALES'),
+              (003, 'JAHNAVI', 'SRIVASTAVA', '300000', '16-12-23 11.00.00', 'IT'),
+              (004, 'AMAN', 'SAXENA', '500000', '18-11-23 12.00.00', 'HR');
+
+              SELECT *FROM WORKER;
+
+              CREATE TABLE BONUS(
+	              WORKER_REF_ID INT,
+	              BONUS_AMOUNT INT(10),
+	              BONUS_DATE DATETIME,
+	              FOREIGN KEY (WORKER_REF_ID)
+		              REFERENCES WORKER(WORKER_ID)
+		              ON DELETE CASCADE
+              );     
+
+              INSERT INTO BONUS
+	              (WORKER_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES
+		              (001, 25000, '16-02-23'),
+                            (002, 25600, '16-03-23'),
+                            (003, 29000, '16-03-23'),
+                            (004, 35000, '16-03-23');
+
+              SELECT* from BONUS;
+
+              CREATE TABLE TITLE(
+	              WORKER_REF_ID INT,
+                     WORKER_TITLE VARCHAR(255),
+                     AFFECTED_FROM DATETIME,
+                     FOREIGN KEY (WORKER_REF_ID)
+              		REFERENCES WORKER(WORKER_ID)
+                            ON DELETE CASCADE
+              );
+
+              INSERT INTO TITLE
+	              (WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES
+		              (001, 'MANAGER', '2016-02-20 00:00:00'),
+                            (002, 'EXECUTIVE', '2016-04-21 00:00:00'),
+                            (003, 'EXECUTIVE', '2016-04-20 00:00:00'),
+                            (004, 'MANAGER', '2016-05-20 00:00:00');
+
+     (iii) - Data Retrieval Language -->>        
+        (a) - SYNTAX -->>
+                            SELECT <set of column names> FROM <table_name>;
+        (b) - Order of execution from RIGHT to LEFT.
+        (c) - We can use SELECT keyword without using FROM clause using DUAL Tables.
+              Dual tables are dummy tables created by MYSQL, help users to do certain obvious actions without referring to user defined tables.
+              Example -> SELECT 55+11;
+                         SELECT now();
+                         SELECT ucase(); etc.
+        (d) - WHERE -->>
+              (i) - Reduce rows based on given conditions.
+              (ii) - Example - SELECT *FROM customer WHERE age>18;
+                               SELECT *FROM worker WHERE DEPARTMENT='HR';
+        (e) - BETWEEN -->>
+              (i) -  SELECT *FROM customer WHERE age between 0 AND 100;
+              (ii) - SELECT *FROM WORKER WHERE SALARY between 100000 and 400000;
+        (f) - IN -->>
+              (i) - Reduce OR conditions 
+              (ii) - Example - SELECT *FROM officers WHERE officer_name IN ('Lakshay','Maharana Pratap','Deepika');
+        (g) - AND/OR/NOT -->>
+              (i) - AND : WHERE cond1 AND cond2
+              (ii) - OR : WHERE cond1 OR cond2
+              (iii) - NOT : WHERE col_name NOT IN (1,2,3,4);
+        (h) - IS NULL -->>
+              (i) - EXAMPLE - SELECT *FROM customer WHERE prime status is NULL;
+        (i) - PATTERN SEARCHING/WILDCARD('%','_') -->>
+              (i) - '%' any number of characters from 0 to n. Similar to '*' asterisk in regex.
+              (ii) - '_' only one character.
+              (iii) - SELECT *FROM customer WHERE name LIKE '%p_';
+        (j) - ORDER BY -->>
+              (i) - Sorting the data retrieved using WHERE clause.
+              (ii) - ORDER BY <column-name> DESC;
+              (iii) - DESC = Descending and ASC = Ascending 
+              (iv) - e.g., SELECT *FROM customer ORDER BY name DESC;
+        (k) - GROUP BY -->>
+              (i) - Group by clause is used to collect data from multiple records and group the result by one or more column. Ot is generally used in a SELECT statement.
+              (ii) - Groups into category based on column given.
+              (iii) - SELECT c1,c2,c3 FROM sample_table WHERE conf GROUP BY c1,c2,c3.
+              (iv) - All the column names mentioned after SELECT statement shall be repeated in GROUP BY, in order to successfully execute the query.
+              (v) - used with aggregation functions to perform various actions.
+                  (a) - COUNT()
+                  (b) - SUM()
+                  (c) - AUG()
+                  (d) -  MIN()
+                  (e) - MAX()
+        (l) - DISTINCT -->>
+              (i) - Find distinct values in the table.
+              (ii) - SELECT DISTINCT (col_name) FROM table_name;
+              (iii) - GROUP BY can also be used for the same.
+                      (a) - "Select col_name from table GROUP BY col_name;" same output as above DISTINCT query.
+                      (b) - SQL is smart enough to realise that if you are using GROUP BY and not using any aggregation function, then you mean "DISTINCT".
+        (m) - GROUP BY HAVING -->>
+              (i) - out of the categories made by GROUP BY, we would like to know only particular thing(cond).
+              (ii) - Similar to WHERE.
+              (iii) - Select COUNT (cust_id),country from customer GROUP BY country HAVING COUNT(cust_id)>50;
+              (iv) - WHERE VS HAVING
+                        (a) - Both have same function of filtering the row base on certain conditions.
+                        (b) - WHERE clause is used to filter the rows from the table based on specified conditions.
+                        (c) - HAVING clause is used to filter the rows from the groups based on the specified conditions.
+                        (d) - HAVING is used after GROUP BY while WHERE is used before GROUP BY clause.
+                        (e) -If you are using HAVING, GROUP BY is necessary.
+                        (f) - WHERE can be used with SELECT, UPDATE & DELETE keywords while GROUP BY used with SELECT.
+      (iv) - CONSTRAINTS (DDL) -->>
+               (i) - Primary Key -> PK is not null, unique and only one per table.
+               (ii) - Foreign Key ->
+                                    (a) - FK refers to PK of other table.
+                                    (b) - Each relation can having any number of FK.
+                                    (c) - CREATE TABLE ORDER(
+                                          id INT PRIMARY KEY,
+                                          delivery_date DATE,
+                                          order_placed_date DATE,
+                                          cust_id INT,
+                                          FORIEGN KEY (cust_id) REFERENCES customer(id)
+                                          );
+                (iii) - UNIQUE ->
+                                    (a) - Unique, can be null, table can have multiple unique attributes.
+                                    (b) - CREATE TABLE customer(
+                                          .......
+                                          email VARCHAR(1024) UNIQUE,
+                                          .......
+                                          );
+                (iv) - CHECK ->
+                                    (a) - CREATE TABLE customer(
+                                          ...
+                                          CONSTRAINT age_check CHECK(age>12),
+                                          ...
+                                          );
+                                    (b) - "age_check", can also avoid this, MySQL generates name of constraint automatically.
+                 (v) - DEFAULT ->
+
+                                    (a) - Set default value of the column.
+                                    (b) - CREATE TABLE account(
+                                          ....
+                                          saving-rate DOUBLE NOT NULL DEFAULT 4.25,
+                                          ....
+                                          );
+                 (vi) - An attribute can be PK and FK both in a table.
+                 (vii) - ALTER OPERATions ->
+                                    (a) - Changes Schema 
+                                    (b) - ADD
+                                          (i) - Add new Column
+                                          (ii) - ALTER TABLE table_name ADD new_col_name datatype ADD new_col_name_2 datatype;
+                                          (iii) - example - ALTER TABLE customer ADD age INT NOT NULL;
+                                    (c) - MODIFY
+                                          (i) - Change datatype of an attribute.
+                                          (ii) - ALTER TABLE table-name MODIFY col-name col-datatype;
+                                          (iii) - Example - VARCHAR TO CHAR
+                                                            ALTER TABLE customer MODIFY name CHAR(1024);
+                                    (d) - CHANGE COLUMN 
+                                          (i) - Rename Column name.
+                                          (ii) - ALTER TABLE table-name CHANGE COLUMN old-col-name new-col-name new-col-datatype;
+                                          (iii) - Example - ALTER TABLE customer CHANGE COLUMN name customer-name VARCHAR(1024);
+                                    (e) - DROP COLUMN
+                                          (i) - Drop a column completely.
+                                          (ii) - ALTER TABLE table-name DROP COLUMN col-name;
+                                          (iii) - Example - ALTER TABLE customer DROP COLUMN middle-name;
+                                    (f) - RENAME
+                                          (i) - Rename table name itself.
+                                          (ii) - ALTER TABLE table-name RENAME TO new-table-name;
+                                          (iii) - Example - ALTER TABLE customer RENAME TO customer-details;
+      (iv) - DATA MANIPULATION LANGUAGE -> 
+                  (i) - INSERT ->
+                        (a) - INSERT INTO table-name(col1,col2,col3) VALUES(v1,v2,v3),val(v1,v2,v3);
+                  (ii) - UPDATE ->
+                        (a) - UPDATE table_name SET col1 = 1,col2 = 'abc' WHERE id = 1;
+                        (b) - update multiple rows e.g.,
+                              (i) - UPDATE student SET standard = standard + 1;
+                        (c) - ON UPDATE CASCADE 
+                              (i) - Can be added to the table while creating constraints. Suppose there is a 
+                                    situation where we have two tables such that primary key of one of the 
+                                    table is foreign key for another table. If we update the primary key of the first
+                                    table then using the ON UPDATE CASCADE foreign key of the second table automatically updated.
+                        (d) - DELETE 
+                              (i) - Delete from table-name WHERE id = 1;
+                              (ii) - Delete from table-name;//all rows will be deleted.
+                              (iii) - DELETE CASCADE - (to overcome DELETE constraint of Referential constraints)
+                                      (a) - What would happen to child entry if parent's table entry is deleted?
+                                      (b) - CREATE TABLE order(
+                                            order_id int primary key,
+                                            delivery_date date,
+                                            cust_id int,
+                                            foreign key(cust_id) REFERENCES customer(id) ON DELETE CASCADE
+                                            );
+
+****************        Notes -->>        ****************
+
+(i) - on delete cascade ka matlab hain ki agar hum parent table se koi cheez delete karte hain to 
+      child table me jo refernce pada hai parent table se related wo bhi delete ho jayenga.
+(ii) - on delete set null ka mtlb hain ki agar parents se maine entry delete kardi to uske corresponding 
+       jo bhi value hain wo NULL set hojayengi.
+
+
+
+**********  JOINING TABLES   **************
+
+(i) - All RDBMS are relational in nature, we refer to the other tables to get meaningful outcomes.
+(ii) - FK are used to do refernce to other table.
+(iii) - INNER JOIN -->>
+        (a) - Returns a resultant table that has matching values from both the tables or all the tables.
+        (b) - SELECT col_name
+              FROM table_name1
+              INNER JOIN table_name2 ON joining_columns_based
+              WHERE condition;
+       (c) - ALIAS in MYSQL -->> It is used to give a temporary name to a table or a column in a table for the purpose of a particular query. It works as a nickname for expressing the tables or column names. It makes the query short and neat.
+              
+              SELECT col_name AS alias_name FROM table_name;
+(IV) - OUTER JOIN -->>
+                      (i) - LEFT JOIN  -->>
+                        (a) - This returns a resulting table that all the data from Left table and 
+                              the matched data from the right table
+                        (b) - SELECT columns FROM table LEFT JOIN table2 ON joining_condition.
+                      (ii) - RIGHT JOIN -->>
+                        (a) - This returns a resulting table that all the data from right table and the matched 
+                              data from the left table.
+                        (b) - SELECT columns FROM table RIGHT JOIN table2 on joining_condition.
+                      (iii) - FULL JOIN -->>
+                        (a) - This returns a resulting table that contains all data when there is a match on left 
+                              or right table data.
+                        (b) - Emulated in MySQL using LEFT and RIGHT JOIN.
+                        (c) - LEFT JOIN UNION RIGHT JOIN.
+                        (d) - SELECT columns FROM table1 as t1 LEFT JOIN table as t2 ON t1.id=t2.id
+                              UNION
+                              SELECT columns FROM table1 as t1 RIGHT JOIN table as t2 ON t1.id=t2.id
+                        (e) - UNION ALL, can also be used this will duplicate values as well while UNION gives unique values.
+(v) - CROSS JOIN -->>
+                        (a) - This returns all the cartesian products of the data present in both tables.
+                              Hence all possible variations are reflected in the output.
+                        (b) - Used rarely in practical purpose.
+                        (c) - Table -1 has 10 rows and Table -2 has 5, then resultant would have 50
+                        (d) - SELECT column-lists FROM table1 CROSS JOIN table2; 
+(vi) - SELF JOIN -->>
+                        (a) - It is used to get the output from a particular table when the same 
+                              table is joined to itself.
+                        (b) - Used very less.
+                        (c) - Emulated using INNER JOIN.
+                        (d) - SELECT columns FROM table as t1 INNER JOIN table as t2 ON t1.id=t2.id;
+(vii) - join WITHOUT using join KEYWORDS -->>
+                        (a) - SELECT *FROM table1, table2 WHERE condition;
+                        (b) - EXAMPLE -> SELECT artist_name, album_name, year_recorded FROM artist, album WHERE artist.id = album.artist.id;
+SET OPERATIONS -->>
+                  (i) - It is used to combine multiple select statements.
+                  (ii) - It always gives distinct rows.
+                  (iii) - UNION -->>
+                                    (i) - It combines two or more select statements.
+                                    (ii) - SELECT *FROM table_name1
+                                           UNION
+                                           SELECT *FROM table_name2
+                                    (iii) - Number of column, order of column must be same for both the table.
+                  (iv) - INTERSECT -->>
+                                    (i) - Returns common values of the tables.
+                                    (ii) - SELECT DISTINCT column_list FROM table_1 INNER JOIN table_name2 USING(join_cond)
+
+                  (v) - MINUS -->>
+                                    (i) - This operator returns the distinct row from the first table taht does not occur in the second table.
+                                    (ii) - SELECT column_list FROM table_name1 LEFT JOIN table_name2 ON condition 
+                                           WHERE table_name2.column_name is NULL.
+
+
+<<<<<<--------SUB QUERIES ------>>>>>>>>>>>.
+                  (i) - Outer query depends on inner query.
+                  (ii) - Alternative to joins.
+                  (iii) - Nested queries.
+                  (iv) - SELECT column_list(s) FROM table_name WHERE column_name OPERATOR 
+                         (SELECT column_list(s) FROM table_name [WHERE]);
+                  (v) - It exist mainly in 3 clauses ->
+                        (a) - Inside a where clause
+                              SELECT MAX(rating) FROM (SELECT *FROM movie WHERE country='India') as temp;
+                        (b) - Inside a FROM clause 
+                              SELECT (SELECT column_list(s) FROM T_name WHERE condition), columnList(s) FROM T2_name WHERE condition;
+                        (c) - Inside a SELECT clause
+                              SELECT columnLists(s) FROM (SELECT columnLists(s) FROM table_name WHERE [condition]) as new_table_name;
+
+
+
+
+                              
+
+
+
+
+*************************   PRACTICE SQL QUERIES *************************
+
+-- Q1 - Write an SQL query to fetch "FIRST_NAME" from worker table using the alias name as <WORKER_NAME>.
+
+SELECT first_name AS WORKER_NAME FROM worker;
+
+-- Q2 - write an SQL query to fetch 'FIRST_NAME' from worker table in upper case.
+
+SELECT upper(first_name) FROM worker;
+
+-- Q3 - write an SQL query to fetch unique values of DEPARTMENT from worker table.
+
+SELECT DISTINCT department FROM worker;
+-- USING GROUP BY 
+SELECT department FROM worker GROUP BY department;
+
+-- Q4 - Write an SQL query to print first three characters of first_name from worker table.
+
+SELECT substring(first_name,1,3) FROM worker;
+
+-- Q5 - Write an SQL query to find the postion of the alphabet ('b') in the first name column 'Amitabh' from worker table.
+
+select position('Y' IN 'NITTYANSH') from worker where first_name = 'NITTYANSH'; 
+
+-- Q6 - write an SQL query to print the first_name from worker table after removing white spaces from the right side.
+
+SELECT RTRIM(first_name) FROM worker;
+
+-- Q7 - write an SQL query to print the first_name from worker table after removing white spaces from the left side.
+
+SELECT LTRIM(first_name) FROM worker;
+
+-- Q8 - Write an SQL query that fetches the unique values of DEPARTMENT from worker table and prints its  length.
+
+SELECT DISTINCT department, LENGTH(department) FROM worker;
+
+-- Q9 - Write an SQL query to print the first_name from worker table after replacing 'a' with 'A'.
+
+SELECT REPLACE(first_name,'a','A') FROM worker; 
+
+-- Q10 - Write an SQL query to print the first_name and last_name from worker table into a single column COMPLETE_NAME.
+
+SELECT CONCAT(first_name,' ', last_name) AS COMPLETE_NAME from worker;
+
+-- Q11 - write an SQL query to print all worker details from the worker table order by first_name ASCENDING.
+
+SELECT *from worker ORDER BY first_name;
+
+-- Q12 - write an SQL query to print all worker details from the worker table order by first_name ASCENDING and department descending.
+
+SELECT *FROM worker ORDER BY first_name ASC, department DESC;
+
+-- Q13 - write an SQL query to print details for workers with the first name as "Vipul" and "Satish" from worker table.
+
+SELECT *FROM worker WHERE first_name IN ('Nittyansh','Shivansh');
+
+-- Q14 - write an SQL query to print details for workers excluding with the first name as "Vipul" and "Satish" from worker table.
+
+SELECT *FROM worker WHERE first_name NOT IN ('Nittyansh','Shivansh');
+
+-- Q15 - Write an SQL query to print details of workers with department name as 'Sales'.
+
+SELECT *FROM worker WHERE department = 'Sales';
+SELECT *FROM worker WHERE department LIKE 'Sales%';
+
+-- Q16 - write an SQL query to print details of workers whose first_name contains 'a'.
+
+SELECT *FROM worker WHERE first_name LIKE '%a%';
+
+-- Q17 - write an SQL query to print details of workers whose first_name ends with 'a'.
+
+SELECT *FROM worker WHERE first_name LIKE '%a';
+
+-- Q18 - Write an SQL query to print details of workers whose first_name ends with 'h' and contains six alphabets.
+
+SELECT *FROM worker WHERE first_name LIKE '________h';
+
+-- Q19 - Write an SQL query to print the names of the workers whose salary lies between 10000 to 500000.
+
+SELECT first_name, last_name FROM worker Where Salary >= 200000 and Salary <= 5000000;
+
+-- Q20 - Write a SQL query to print details of the workers who have joined in Feb 23.
+
+Select *FROM worker WHERE YEAR(joining_date) = 2023 AND MONTH(joining_date) = 02;
+
+-- Q21 - Write a SQL query to fetch the count of employees working in the department 'Admin'.
+
+SELECT count(department) FROM worker WHERE department = 'HR';
+
+-- Q22 - Write an SQL query to fetch worker full names with salaries>=300000 and <=1000000.
+
+SELECT concat(first_name,' ',last_name)  AS full_name FROM worker WHERE salary between 300000 and 1000000;
+
+-- Q23 - Write an SQL query to fetch the no. of workers for each department in the descending order.
+
+SELECT department,COUNT(worker_id) FROM worker GROUP BY department order by COUNT(worker_id) DESC;
+
+-- Q24 - Write an SQL query to print the details of the workers who are also managers.
+
+SELECT *FROM worker as w
+INNER JOIN TITLE as t
+ON w.worker_id = t.worker_ref_id
+WHERE worker_title = 'Manager';
+
+-- Q25 - Write an SQL query to fetch number (more than 1) of different titles in the ORG.
+
+
+SELECT worker_title, count(*) FROM title GROUP BY worker_title HAVING count(*)>1;
+
+-- Q26 - Write an SQL query to show only ODD rows from the table.
+
+SELECT *FROM worker WHERE MOD (worker_id,2) != 0;
+
+-- Q26 - Write an SQL query to show only EVEN rows from the table.
+
+SELECT *FROM worker WHERE MOD (worker_id,2) = 0;
+
+-- Q27 - Write a SQL query to clone a new table from another table.
+
+CREATE TABLE worker_clone LIKE worker;
+INSERT INTO worker_clone SELECT *FROM worker; -- For also cloning the data of worker in worker_clone
+
+-- Q28 - Write an SQL query to fetch intersecting records of two tables.
+
+SELECT worker.* FROM worker INNER JOIN worker_clone using(worker_id);
+
+-- Q29 - Write an SQL query to show records from one table that another table doesn't have.
+
+SELECT worker.* FROM worker LEFT JOIN worker_clone USING (worker_id) WHERE worker_clone.worker_id IS NULL;
+
+-- Q30 - Write an SQL query to show the current date and time.
+
+SELECT CURDATE();
+SELECT NOW();
+
+-- Q31 - Write an SQL query to show the top n (say 5) records of a table order by descending order.
+
+SELECT *FROM worker ORDER BY salary DESC LIMIT 5;
+
+-- Q32 - Write an SQL query to show the nth (say n =5) highest salary from a table.
+
+SELECT *FROM worker ORDER BY salary DESC LIMIT 4,1;
+
+-- Q33 - write an SQL query to determine the 5th highest salary without using LIMIT keyword.
+
+SELECT first_name,salary FROM worker w1 WHERE 4 = (SELECT COUNT(DISTINCT (w2.salary)) FROM worker w2 WHERE w2.salary >= w1.salary);
+
+-- Q34 - write an SQL query to fetch the list of employees with the same salary.
+
+SELECT w1.* FROM worker w1, worker w2 WHERE w1.salary=w2.salary and w1.worker_id != w2.worker_id;
+
+-- Q35 - write an SQL query to show the second highest salary from a table.
+
+SELECT *FROM worker ORDER BY salary DESC LIMIT 1,1;
+SELECT MAX(salary) FROM worker
+WHERE salary NOT IN (SELECT MAX(salary) FROM worker);
+
+-- Q36 - write an SQL query to show one row twice in results from a table.
+
+SELECT *FROM worker 
+UNION ALL
+SELECT *FROM worker ORDER BY worker_id;
+
+-- Q37 - write an SQL query to list worker_id who doesn't get bonus.
+
+SELECT worker_id FROM worker WHERE worker_id NOT IN (SELECT worker_ref_id FROM bonus);
+
+-- Q38 - write an SQL query to fetch the first 50% records from a table.
+
+SELECT *FROM worker WHERE worker_id <= (SELECT COUNT(worker_id)/2 FROM worker);
+
+-- Q39 - Write an SQL query to fetch the departments that have less than 4 people in it.
+
+SELECT department, COUNT(department) as depCount FROM worker GROUP BY department having depCount < 2;
+
+-- Q40 - write an SQL query to show all departments along with the number of people in there.
+
+SELECT DISTINCT department, COUNT(department) AS depCount FROM worker GROUP BY department;
